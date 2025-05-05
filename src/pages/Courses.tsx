@@ -163,7 +163,7 @@ const Courses = () => {
           'Resource allocation and efficiency',
           'Government intervention and regulation'
         ],
-        project: 'Analyzed a local market's pricing strategies and competitive dynamics.'
+        project: 'Analyzed a local market\'s pricing strategies and competitive dynamics.'
       }
     ]
   };
