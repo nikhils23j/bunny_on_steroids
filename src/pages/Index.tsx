@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import AnimatedBackground from '@/components/AnimatedBackground';
+import CodeBlock from '@/components/CodeBlock';
+import GlowingCard from '@/components/GlowingCard';
 
 const Index = () => {
   // Featured Projects
@@ -90,16 +93,32 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-900 text-white px-4">
-        <div className="container mx-auto flex flex-col items-center text-center max-w-4xl animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">Hello, I'm Student Name</h1>
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl">
-            Computer Science student at University Name. I build applications, analyze data, and write about my journey.
+      <section className="min-h-screen flex items-center justify-center relative px-4 overflow-hidden">
+        <AnimatedBackground />
+        
+        <div className="container mx-auto flex flex-col items-center text-center max-w-4xl animate-fade-in relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold mb-2 font-serif">
+            <span className="text-gradient">Hello, I'm Nikhil Jain</span>
+          </h1>
+          <div className="mb-8 relative">
+            <CodeBlock title="intro.js" language="javascript">
+              {`const developer = {
+  name: "Nikhil Jain",
+  role: "Computer Science Student",
+  loves: ["Web Development", "AI", "Problem Solving"],
+  currentlyLearning: "Machine Learning",
+};
+
+// Welcome to my digital space!`}
+            </CodeBlock>
+          </div>
+          <p className="text-xl md:text-2xl mb-10 text-foreground/80 max-w-2xl">
+            Computer Science student. I build applications, analyze data, and write about my journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-amber-600 text-white hover-scale"
+              className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect"
               asChild
             >
               <Link to="/projects">View Projects</Link>
@@ -107,7 +126,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white/10 hover-scale"
+              className="border-primary text-primary hover:bg-primary/10 ripple-effect"
               asChild
             >
               <Link to="/contact">Contact Me</Link>
@@ -120,35 +139,38 @@ const Index = () => {
       <section className="container-section" id="about">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in">
-            <h2 className="section-title">About Me</h2>
-            <p className="text-lg text-navy-700 mb-6">
+            <h2 className="text-gradient section-title">About Me</h2>
+            <p className="text-lg text-foreground/80 mb-6">
               I'm a passionate Computer Science student with a focus on web development and data analysis.
               Currently in my junior year, I've developed skills across multiple programming languages and frameworks.
             </p>
-            <p className="text-lg text-navy-700 mb-6">
+            <p className="text-lg text-foreground/80 mb-6">
               When I'm not coding, you can find me participating in hackathons, contributing to open source,
               or exploring new technologies through side projects.
             </p>
             <Button 
-              className="bg-navy-700 hover:bg-navy-800 text-white hover-scale"
+              className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
               asChild
             >
               <Link to="/about">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
-          <div className="relative h-96 rounded-lg overflow-hidden shadow-xl animate-scale-in">
+          <div className="relative rounded-lg overflow-hidden shadow-xl animate-scale-in">
             <img 
               src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=600" 
               alt="Student working on a laptop" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent mix-blend-multiply"></div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-background/90 -z-10"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] -z-10"></div>
+        
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title">Featured Projects</h2>
@@ -158,32 +180,32 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <Card key={project.id} className="overflow-hidden hover-scale hover:shadow-lg transition-all">
-                <div className="h-48 overflow-hidden">
+              <GlowingCard key={project.id}>
+                <div className="h-48 -mx-6 -mt-6 mb-6 overflow-hidden rounded-t-lg">
                   <img 
                     src={project.image} 
                     alt={project.title} 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-navy-600 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="bg-navy-100 text-navy-700 px-2 py-1 rounded-md text-sm">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Button variant="outline" className="w-full hover:bg-navy-100">View Details</Button>
-                </CardContent>
-              </Card>
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-foreground/70 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="bg-primary/10 text-primary px-2 py-1 rounded-md text-sm">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <Button variant="outline" className="w-full hover:bg-primary/10 hover:text-primary border-primary/20">
+                  View Details
+                </Button>
+              </GlowingCard>
             ))}
           </div>
           <div className="text-center mt-12">
             <Button 
-              className="bg-navy-700 hover:bg-navy-800 text-white"
+              className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
               asChild
             >
               <Link to="/projects">View All Projects <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -204,18 +226,18 @@ const Index = () => {
           {keyCourses.map((course) => (
             <div 
               key={course.id} 
-              className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-all hover:border-teal-200 hover:bg-teal-50/30"
+              className="glass-card rounded-lg p-6 hover:shadow-lg transition-all border-white/20"
             >
               <div className="flex justify-between items-start mb-3">
                 <div>
-                  <h3 className="text-xl font-bold text-navy-800">{course.title}</h3>
-                  <p className="text-navy-600">{course.code}</p>
+                  <h3 className="text-xl font-bold">{course.title}</h3>
+                  <p className="text-foreground/70">{course.code}</p>
                 </div>
-                <span className="bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full">Completed</span>
+                <span className="bg-accent/10 text-accent text-xs px-2 py-1 rounded-full">Completed</span>
               </div>
               <div className="flex flex-wrap gap-2 mt-4">
                 {course.skills.map(skill => (
-                  <span key={skill} className="bg-navy-100 text-navy-700 px-2 py-1 rounded-md text-sm">
+                  <span key={skill} className="bg-primary/10 text-primary px-2 py-1 rounded-md text-sm">
                     {skill}
                   </span>
                 ))}
@@ -225,7 +247,7 @@ const Index = () => {
         </div>
         <div className="text-center mt-12">
           <Button 
-            className="bg-navy-700 hover:bg-navy-800 text-white"
+            className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
             asChild
           >
             <Link to="/courses">View All Courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -234,7 +256,10 @@ const Index = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="bg-gray-50 py-20">
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background to-background/90 -z-10"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] -z-10"></div>
+        
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-title">Recent Blog Posts</h2>
@@ -244,7 +269,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden hover-scale hover:shadow-lg transition-all">
+              <Card key={post.id} className="overflow-hidden hover-scale hover:shadow-lg transition-all bg-white/50 backdrop-blur-sm border border-white/30">
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={post.image} 
@@ -253,17 +278,19 @@ const Index = () => {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <div className="text-sm text-navy-500 mb-2">{post.date}</div>
+                  <div className="text-sm text-foreground/60 mb-2">{post.date}</div>
                   <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                  <p className="text-navy-600 mb-4">{post.excerpt}</p>
-                  <Button variant="outline" className="w-full hover:bg-navy-100">Read Post</Button>
+                  <p className="text-foreground/70 mb-4">{post.excerpt}</p>
+                  <Button variant="outline" className="w-full hover:bg-primary/10 hover:text-primary border-primary/20">
+                    Read Post
+                  </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="text-center mt-12">
             <Button 
-              className="bg-navy-700 hover:bg-navy-800 text-white"
+              className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
               asChild
             >
               <Link to="/blog">View All Posts <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -273,16 +300,18 @@ const Index = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-gradient-to-r from-teal-700 to-teal-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Connect</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Let's Connect</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
             Interested in working together or have questions about my projects?
             Feel free to reach out!
           </p>
           <Button 
             size="lg" 
-            className="bg-white text-teal-900 hover:bg-gray-100 hover-scale"
+            className="bg-white text-primary hover:bg-white/90 hover-scale shadow-lg shadow-black/10 ripple-effect"
             asChild
           >
             <Link to="/contact">Get In Touch</Link>
