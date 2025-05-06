@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import CodeBlock from '@/components/CodeBlock';
 import GlowingCard from '@/components/GlowingCard';
+
 const Index = () => {
   // Featured Projects
   const featuredProjects = [{
@@ -79,32 +80,34 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center relative px-4 overflow-hidden">
         <AnimatedBackground />
         
-        <div className="container mx-auto flex flex-col items-center text-center max-w-4xl animate-fade-in relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-2 font-serif">
-            <span className="text-gradient text-fuchsia-800">Hey I'm Nikhil !</span>
-          </h1>
-          <div className="mb-8 relative">
-            <CodeBlock title="intro.js" language="javascript">
-              {`const developer = {
-  name: "Nikhil Jain",
-  role: "Computer Science Student",
-  loves: ["Web Development", "AI", "Problem Solving"],
-  currentlyLearning: "Machine Learning",
-};
-
-// Welcome to my digital space!`}
-            </CodeBlock>
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl animate-fade-in relative z-10 gap-8">
+          {/* Left column: Name, description and buttons */}
+          <div className="flex flex-col items-start text-left max-w-xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">
+              <span className="text-gradient text-fuchsia-800">Hey I'm Nikhil!</span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-10 text-foreground/80">
+              Computer Science student. I build applications, analyze data, and write about my journey.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect" asChild>
+                <Link to="/projects">View Projects</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 ripple-effect" asChild>
+                <Link to="/contact">Contact Me</Link>
+              </Button>
+            </div>
           </div>
-          <p className="text-xl md:text-2xl mb-10 text-foreground/80 max-w-2xl">
-            Computer Science student. I build applications, analyze data, and write about my journey.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect" asChild>
-              <Link to="/projects">View Projects</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 ripple-effect" asChild>
-              <Link to="/contact">Contact Me</Link>
-            </Button>
+          
+          {/* Right column: Image */}
+          <div className="w-full md:w-2/5 flex justify-center md:justify-end">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 p-1 shadow-xl animate-scale-in">
+              <img 
+                src="/lovable-uploads/34df2576-2aa5-4cba-a3c6-afe6cbfc1f8a.png" 
+                alt="Nikhil's profile" 
+                className="w-full h-full rounded-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -255,4 +258,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
