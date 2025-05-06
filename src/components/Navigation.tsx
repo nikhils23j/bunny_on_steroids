@@ -48,7 +48,7 @@ const Navigation = () => {
         {/* Logo */}
         <Link to="/" className="font-serif font-bold flex items-center hover-scale">
           <span className="text-3xl text-gradient text-zinc-800">Nikhil</span>
-          <span className="text-3xl text-foreground ml-1">Jai</span>
+          <span className="text-3xl text-foreground ml-1">Jain</span>
           <Code className="ml-2 text-accent h-5 w-5" />
         </Link>
 

@@ -7,7 +7,6 @@ import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import CodeBlock from '@/components/CodeBlock';
 import GlowingCard from '@/components/GlowingCard';
-
 const Index = () => {
   // Featured Projects
   const featuredProjects = [{
@@ -86,9 +85,11 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">
               <span className="text-gradient text-fuchsia-800">Hey I'm Nikhil!</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-foreground/80">
-              Computer Science student. I build applications, analyze data, and write about my journey.
-            </p>
+            <p className="text-xl md:text-2xl mb-10 text-foreground/80">Electrical engineering,
+Indian Institute of Technology, Kanpur
+Batch 2022
+
+          </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect" asChild>
                 <Link to="/projects">View Projects</Link>
@@ -102,11 +103,7 @@ const Index = () => {
           {/* Right column: Image */}
           <div className="w-full md:w-2/5 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 p-1 shadow-xl animate-scale-in">
-              <img 
-                src="/lovable-uploads/34df2576-2aa5-4cba-a3c6-afe6cbfc1f8a.png" 
-                alt="Nikhil's profile" 
-                className="w-full h-full rounded-full object-cover object-center"
-              />
+              <img src="/lovable-uploads/34df2576-2aa5-4cba-a3c6-afe6cbfc1f8a.png" alt="Nikhil's profile" className="w-full h-full rounded-full object-cover object-center" />
             </div>
           </div>
         </div>
@@ -258,5 +255,4 @@ const Index = () => {
       <Footer />
     </div>;
 };
-
 export default Index;
