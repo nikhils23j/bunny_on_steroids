@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Code, Bookmark, Home, User, Layers, BookOpen, MessageSquare } from 'lucide-react';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from './ThemeToggle';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-1 items-center bg-white/30 backdrop-blur-sm rounded-full px-2 py-1">
+        <div className="hidden md:flex space-x-1 items-center bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full px-2 py-1">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -63,6 +64,8 @@ const Navigation = () => {
             </Link>
           ))}
           
+          <ThemeToggle className="ml-2" />
+          
           <a 
             href="https://github.com/nikhiljain" 
             target="_blank" 
@@ -74,7 +77,8 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="sm"
@@ -107,7 +111,7 @@ const Navigation = () => {
               </Link>
             ))}
             
-            <div className="border-t border-gray-100 my-2 pt-2"></div>
+            <div className="border-t border-gray-100 dark:border-gray-800 my-2 pt-2"></div>
             
             <a 
               href="https://github.com/nikhiljain" 

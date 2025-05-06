@@ -219,6 +219,10 @@
   position: relative;
 }
 
+.dark .terminal {
+  background-color: #1a1a1a;
+}
+
 .terminal::before {
   content: "";
   position: absolute;
