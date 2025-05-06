@@ -81,7 +81,7 @@ const Index = () => {
         
         <div className="container mx-auto flex flex-col items-center text-center max-w-4xl animate-fade-in relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-2 font-serif">
-            <span className="text-gradient">Hey I'm Nikhil !</span>
+            <span className="text-gradient text-fuchsia-800">Hey I'm Nikhil !</span>
           </h1>
           <div className="mb-8 relative">
             <CodeBlock title="intro.js" language="javascript">
