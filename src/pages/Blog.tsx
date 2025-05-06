@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search } from 'lucide-react';
+import { Search, BookOpen } from 'lucide-react';
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -135,7 +135,23 @@ const Blog = () => {
     }
   ];
   
-  const filteredPosts = blogPosts.filter(post => 
+  // Add a new resource post at the top
+  const resourcePost = {
+    id: 6,
+    title: 'Comprehensive Career and Placement Resources',
+    slug: 'resources',
+    excerpt: 'A curated collection of resources for various job roles, including placement guides, resumes, and role-specific materials.',
+    content: '',
+    date: 'May 6, 2025',
+    image: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500',
+    readTime: '12 min read',
+    category: 'Resources',
+    isSpecial: true
+  };
+  
+  const allPosts = [resourcePost, ...blogPosts];
+  
+  const filteredPosts = allPosts.filter(post => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
     post.category.toLowerCase().includes(searchQuery.toLowerCase())
@@ -175,8 +191,48 @@ const Blog = () => {
         </div>
       </section>
       
-      {/* Featured Post */}
+      {/* Featured Post - Career Resources */}
       <section className="pt-12 pb-6">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold mb-8 text-navy-800">Featured Resource</h2>
+          <div className="bg-gradient-to-br from-navy-50 to-navy-100 rounded-xl p-6 md:p-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="rounded-lg overflow-hidden h-[300px]">
+                <img 
+                  src={resourcePost.image} 
+                  alt={resourcePost.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <div className="flex gap-2 mb-4">
+                  <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm flex items-center">
+                    <BookOpen className="mr-1 h-4 w-4" />
+                    {resourcePost.category}
+                  </span>
+                  <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                    {resourcePost.readTime}
+                  </span>
+                </div>
+                <h3 className="text-3xl font-bold mb-4 text-navy-800">{resourcePost.title}</h3>
+                <p className="text-navy-600 mb-4">{resourcePost.excerpt}</p>
+                <div className="mb-6 text-gray-500">{resourcePost.date}</div>
+                <Button 
+                  className="bg-navy-700 hover:bg-navy-800 text-white"
+                  asChild
+                >
+                  <Link to={`/blog/${resourcePost.slug}`}>
+                    Access Resource Collection
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Regular Featured Post */}
+      <section className="pb-6">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold mb-8 text-navy-800">Featured Post</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -218,7 +274,7 @@ const Blog = () => {
           <h2 className="text-2xl font-bold mb-8 text-navy-800">All Posts</h2>
           {filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post) => (
+              {filteredPosts.filter(post => !post.isSpecial).map((post) => (
                 <Card key={post.id} className="overflow-hidden hover-scale hover:shadow-lg transition-all">
                   <div className="h-52 overflow-hidden">
                     <img 
