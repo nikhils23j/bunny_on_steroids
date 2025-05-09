@@ -1,12 +1,8 @@
-
 import { Link } from 'react-router-dom';
 import { Github, Linkedin, Twitter, Code, Mail, MapPin } from 'lucide-react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-gradient-to-br from-primary/90 to-secondary/90 text-white py-16">
+  return <footer className="bg-gradient-to-br from-primary/90 to-secondary/90 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
@@ -14,10 +10,7 @@ const Footer = () => {
               <h3 className="text-3xl font-serif font-bold mr-2">Nikhil Jain</h3>
               <Code className="h-5 w-5 text-accent/80" />
             </div>
-            <p className="mb-6 text-white/80 max-w-md">
-              Computer Science student with a passion for building innovative solutions. 
-              Turning ideas into reality through code and creativity.
-            </p>
+            <p className="mb-6 text-white/80 max-w-md">With a passion for building innovative solutions, I turn ideas into reality through code and creativity.</p>
             <div className="flex space-x-4">
               <a href="https://github.com/nikhiljain" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
                 <Github className="h-5 w-5" />
@@ -75,8 +68,6 @@ const Footer = () => {
           <p>&copy; {currentYear} Nikhil Jain. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

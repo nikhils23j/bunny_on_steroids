@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,6 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import GlowingCard from '@/components/GlowingCard';
-
 const Index = () => {
   // Featured Projects
   const featuredProjects = [{
@@ -91,7 +89,6 @@ const Index = () => {
     title: 'Communication Systems',
     skills: ['MATLAB', 'Signal Processing', 'Modulation']
   }];
-  
   return <div className="min-h-screen flex flex-col">
       <Navigation />
 
@@ -103,13 +100,9 @@ const Index = () => {
           {/* Left column: Name, description and buttons */}
           <div className="flex flex-col items-start text-left max-w-xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">
-              <span className="text-gradient text-fuchsia-800">Hey I'm Nikhil!</span>
+              <span className="text-gradient text-fuchsia-800">Hi, I'm Nikhil.</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-foreground/80">Electrical engineering,
-Indian Institute of Technology, Kanpur
-Batch 2022
-
-          </p>
+            <p className="text-xl md:text-2xl mb-10 text-foreground/80">IIT Kanput  Y22 | Electrical Engineering</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect" asChild>
                 <Link to="/projects">View Projects</Link>
