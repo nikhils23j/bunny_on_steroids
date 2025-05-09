@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -8,10 +7,25 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Search, BookOpen, ExternalLink } from 'lucide-react';
 
+// Define the blog post type with the isSpecial property
+interface BlogPost {
+  id: number;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  image: string;
+  readTime: string;
+  category: string;
+  externalLink: string;
+  isSpecial?: boolean; // Make isSpecial optional
+}
+
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState('');
   
-  const blogPosts = [
+  const blogPosts: BlogPost[] = [
     {
       id: 1,
       title: "Third Year Resources",
@@ -62,8 +76,8 @@ const Blog = () => {
     }
   ];
   
-  // Career Resources post
-  const resourcePost = {
+  // Career Resources post with isSpecial property
+  const resourcePost: BlogPost = {
     id: 6,
     title: 'Comprehensive Career and Placement Resources',
     slug: 'resources',
@@ -77,7 +91,7 @@ const Blog = () => {
     isSpecial: true
   };
   
-  const allPosts = [resourcePost, ...blogPosts];
+  const allPosts: BlogPost[] = [resourcePost, ...blogPosts];
   
   const filteredPosts = allPosts.filter(post => 
     post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 

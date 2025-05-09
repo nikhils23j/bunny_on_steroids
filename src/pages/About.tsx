@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Link } from 'react-router-dom';
-import { Book, Music, Chess, CodeIcon } from 'lucide-react';
+import { Book, Music, GamepadIcon, CodeIcon } from 'lucide-react';
 
 const About = () => {
   const skills = [
@@ -202,7 +202,7 @@ const About = () => {
               </div>
               <div className="bg-gray-100 p-6 rounded-lg hover:shadow-md transition-all">
                 <div className="flex items-center mb-3">
-                  <Chess className="w-6 h-6 text-gray-800 mr-2" />
+                  <GamepadIcon className="w-6 h-6 text-gray-800 mr-2" />
                   <h3 className="text-xl font-bold text-gray-800">Playing Chess</h3>
                 </div>
                 <p className="text-navy-700">
