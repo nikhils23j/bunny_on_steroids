@@ -172,8 +172,50 @@
   .hover-card-effect {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-[3px] border;
   }
+  
+  /* New styles for hero section */
+  .hero-background-image {
+    @apply fixed;
+    background-attachment: fixed;
+  }
+  
+  .hero-gradient-overlay {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  }
+  
+  .resume-button {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.2);
+  }
+  
+  .resume-button:hover {
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.4);
+  }
+  
+  /* Mouse follower effect */
+  .mouse-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(147, 51, 234, 0.3);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  /* Particles styles */
+  .particles-container {
+    background-image: radial-gradient(circle, rgba(147, 51, 234, 0.1) 1px, transparent 1px),
+                      radial-gradient(circle, rgba(172, 127, 244, 0.1) 1px, transparent 1px),
+                      radial-gradient(circle, rgba(147, 51, 234, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px, 80px 80px, 60px 60px;
+    animation: particles-move 60s linear infinite;
+  }
 }
 
+/* Animations */
 @keyframes floating {
   0% {
     transform: translateY(0px);
@@ -211,6 +253,41 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes particles-move {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 100px 100px, 200px -100px, -100px 200px;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }
 
@@ -253,4 +330,17 @@
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
+}
+
+/* New animations */
+.animate-hero-zoom {
+  animation: hero-zoom 5s ease forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 1s ease;
+}
+
+.animate-bounce {
+  animation: floating 2s ease-in-out infinite;
 }

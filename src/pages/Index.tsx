@@ -1,4 +1,5 @@
-import { ArrowRight } from 'lucide-react';
+
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,7 +7,59 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import GlowingCard from '@/components/GlowingCard';
+import { useEffect, useState } from 'react';
+
 const Index = () => {
+  // State for animations
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
+  const greeting = "Hi, I'm Nikhil.";
+  
+  // Typewriter effect
+  useEffect(() => {
+    if (charIndex < greeting.length) {
+      const timer = setTimeout(() => {
+        setCharIndex(prevIndex => prevIndex + 1);
+      }, 100); // Speed of typing
+      return () => clearTimeout(timer);
+    }
+  }, [charIndex]);
+  
+  // Page load animation
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    // Scroll to top on page load
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Initialize mouse follow effect
+    const createMouseFollower = (e) => {
+      const follower = document.createElement('div');
+      follower.className = 'mouse-follower';
+      document.body.appendChild(follower);
+      
+      follower.style.left = e.clientX + 'px';
+      follower.style.top = e.clientY + 'px';
+      
+      setTimeout(() => {
+        follower.style.opacity = '0';
+        follower.style.transform = 'scale(2)';
+        setTimeout(() => {
+          follower.remove();
+        }, 1000);
+      }, 100);
+    };
+    
+    document.addEventListener('mousemove', createMouseFollower);
+    
+    return () => {
+      document.removeEventListener('mousemove', createMouseFollower);
+    };
+  }, []);
+
   // Featured Projects
   const featuredProjects = [{
     id: 1,
@@ -89,35 +142,55 @@ const Index = () => {
     title: 'Communication Systems',
     skills: ['MATLAB', 'Signal Processing', 'Modulation']
   }];
-  return <div className="min-h-screen flex flex-col">
+  
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section with Personal Image Background */}
       <section className="min-h-screen flex items-center justify-center relative px-4 overflow-hidden">
-        <AnimatedBackground />
+        {/* Personal image background with gradient overlay */}
+        <div className="absolute inset-0 z-0 hero-background-image animate-hero-zoom">
+          <img 
+            src="/lovable-uploads/c7c909f4-10ae-4af6-a9e9-e8fc3f14f3d4.png" 
+            alt="Nikhil in mountains" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 hero-gradient-overlay"></div>
+        </div>
         
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl animate-fade-in relative z-10 gap-8">
-          {/* Left column: Name, description and buttons */}
-          <div className="flex flex-col items-start text-left max-w-xl">
+        {/* Particle Effect */}
+        <div className="particles-container absolute inset-0 z-10 pointer-events-none"></div>
+        
+        <div className="container mx-auto flex flex-col items-center justify-center max-w-6xl relative z-20 gap-8">
+          {/* Name, description and button - centered */}
+          <div className={`flex flex-col items-center text-center max-w-xl transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">
-              <span className="text-gradient text-fuchsia-800">Hi, I'm Nikhil.</span>
+              <span className="text-gradient text-fuchsia-800">
+                {greeting.substring(0, charIndex)}
+                <span className="animate-pulse">|</span>
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-foreground/80">IIT Kanpur Y22 | Electrical Engineering</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect" asChild>
-                <Link to="/projects">View Projects</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 ripple-effect" asChild>
-                <Link to="/contact">Contact Me</Link>
+            <p className={`text-xl md:text-2xl mb-10 text-foreground/80 transition-opacity duration-1000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+              IIT Kanpur Y22 | Electrical Engineering
+            </p>
+            <div className={`transition-all duration-1000 delay-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <Button 
+                size="lg" 
+                className="resume-button bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 animate-bounce-in transition-transform duration-300 hover:scale-110"
+                onClick={() => window.open('/path/to/resume.pdf', '_blank')}
+              >
+                See Resume
               </Button>
             </div>
           </div>
-          
-          {/* Right column: Image */}
-          <div className="w-full md:w-2/5 flex justify-center md:justify-end">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 p-1 shadow-xl animate-scale-in">
-              <img src="/lovable-uploads/34df2576-2aa5-4cba-a3c6-afe6cbfc1f8a.png" alt="Nikhil's profile" className="w-full h-full rounded-full object-cover object-center" />
-            </div>
+        </div>
+        
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="scroll-indicator flex flex-col items-center text-primary animate-bounce">
+            <span className="text-sm mb-2">Scroll Down</span>
+            <ChevronDown size={24} />
           </div>
         </div>
       </section>
@@ -266,6 +339,8 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
