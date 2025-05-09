@@ -188,4 +188,31 @@ export default {
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
+
+    // Define CSS variables for light and dark mode 
+    // Use these with special handling for dark mode using the "dark:" prefix
+    // For example, in your components, use "dark:text-gray-100" to make text light in dark mode
+    daisyui: {
+        themes: [
+            {
+                light: {
+                    "color-scheme": "light",
+                    "foreground": "#333",
+                    "background": "#fff",
+                    "dark-foreground": "#E0E0E0", 
+                    "dark-headings": "#F5F5F5", 
+                    "dark-hover": "#00A3E0" 
+                },
+                dark: {
+                    "color-scheme": "dark",
+                    "foreground": "#E0E0E0", // Light gray for better readability
+                    "background": "#1A1F2C", // Dark background
+                    "headings": "#F5F5F5", // Off-white for headings
+                    "hover": "#00A3E0", // Bright blue for hover effects
+                    "card": "#221F26", // Dark charcoal for cards
+                    "border": "#333333", // Dark gray for borders
+                }
+            }
+        ]
+    }
 } satisfies Config;

@@ -1,0 +1,63 @@
+
+/* Dark Mode Styling */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  @apply text-gray-50; /* Off-white for headings */
+}
+
+.dark p,
+.dark span,
+.dark div,
+.dark li {
+  @apply text-gray-200; /* Light gray for text */
+}
+
+.dark a:hover,
+.dark button:hover {
+  @apply text-blue-400; /* Light blue for hover effects */
+}
+
+.dark .card,
+.dark .glass-card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .bg-white,
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  @apply bg-gray-800;
+}
+
+.dark .bg-navy-100 {
+  @apply bg-navy-800 text-gray-100;
+}
+
+.dark .text-navy-700,
+.dark .text-navy-800 {
+  @apply text-gray-100;
+}
+
+.dark .text-navy-600 {
+  @apply text-gray-300;
+}
+
+.dark .border-white {
+  @apply border-gray-700;
+}
+
+/* Interactive elements */
+.dark .hover\:bg-primary\/10:hover {
+  @apply bg-primary/20 text-gray-100;
+}
+
+.dark .glass-morphism {
+  @apply backdrop-blur-xl bg-gray-900/80 border border-gray-700;
+}

@@ -12,22 +12,22 @@ const Index = () => {
   // Featured Projects
   const featuredProjects = [{
     id: 1,
-    title: 'Car Crash Detection System',
-    description: 'Developed an embedded system that detects car crashes and automatically sends emergency notifications with location data.',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400',
-    tags: ['Embedded C', 'IoT', 'Sensors']
+    title: 'Paragraph Identification System',
+    description: 'Developed a system to identify the most relevant paragraphs in a corpus based on a given question using natural language processing techniques.',
+    image: 'https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?auto=format&fit=crop&w=600&h=400',
+    tags: ['Python', 'NLP', 'Information Retrieval']
   }, {
     id: 2,
-    title: 'ML-Based Predictive Maintenance',
-    description: 'Created a machine learning model to predict equipment failures in industrial settings, reducing downtime and maintenance costs.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=400',
-    tags: ['Python', 'Machine Learning', 'Data Analysis']
+    title: 'Retrieval Augmented Generation',
+    description: 'Implemented RAG using a large language model API to generate concise, contextually accurate responses for question-answering systems.',
+    image: 'https://images.unsplash.com/photo-1677442135136-760c813028c4?auto=format&fit=crop&w=600&h=400',
+    tags: ['Python', 'LLM API', 'AI']
   }, {
     id: 3,
-    title: 'Communication Protocol Simulator',
-    description: 'Built a simulator for testing and analyzing various network protocols under different conditions and traffic loads.',
-    image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&h=400',
-    tags: ['C++', 'Computer Networks', 'Simulation']
+    title: 'Trie and Linked List for Query Processing',
+    description: 'Designed and implemented efficient data structures for query processing and result retrieval, optimized for large datasets.',
+    image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=600&h=400',
+    tags: ['C++', 'Data Structures', 'Algorithms']
   }];
 
   // Featured Blog Posts
@@ -62,19 +62,34 @@ const Index = () => {
     skills: ['Python', 'NumPy', 'scikit-learn', 'TensorFlow']
   }, {
     id: 2,
+    code: 'CS345',
+    title: 'Algorithms II',
+    skills: ['C++', 'Algorithm Design', 'Complexity Analysis']
+  }, {
+    id: 3,
     code: 'CS315',
     title: 'Databases and Information Systems',
     skills: ['SQL', 'Database Design', 'ER Modeling']
   }, {
-    id: 3,
+    id: 4,
+    code: 'CS425',
+    title: 'Computer Networks',
+    skills: ['TCP/IP', 'Routing', 'Socket Programming']
+  }, {
+    id: 5,
+    code: 'ESO207',
+    title: 'Data Structures and Algorithms',
+    skills: ['C++', 'Data Structures', 'Algorithms']
+  }, {
+    id: 6,
     code: 'EE381',
     title: 'Embedded Systems',
     skills: ['Embedded C', 'Microcontrollers', 'IoT']
   }, {
-    id: 4,
-    code: 'CS345',
-    title: 'Algorithms II',
-    skills: ['C++', 'Algorithm Design', 'Complexity Analysis']
+    id: 7,
+    code: 'EE321',
+    title: 'Communication Systems',
+    skills: ['MATLAB', 'Signal Processing', 'Modulation']
   }];
   
   return <div className="min-h-screen flex flex-col">
@@ -120,10 +135,10 @@ Batch 2022
           <div className="animate-slide-in">
             <h2 className="text-gradient section-title">About Me</h2>
             <p className="text-lg text-foreground/80 mb-6">
-              I'm a third-year Electrical Engineering student at IIT Kanpur, passionate about technology and innovation. Currently, I'm interning at Samsung Research Bangalore in the networks modem domain, where I'm gaining hands-on experience in cutting-edge communication systems.
+              I'm Nikhil Jain, a third-year Electrical Engineering undergraduate at IIT Kanpur with a CPI of 8.0/10. Passionate about technology and innovation, I'm currently interning at Samsung Research Bangalore in the networks modem domain, gaining hands-on experience in advanced communication systems.
             </p>
             <p className="text-lg text-foreground/80 mb-6">
-              Beyond academics, I have a knack for singing and am honing my skills in machine learning, quantitative finance, and data structures and algorithms. By 2025, I aim to complete a minor in Machine Learning, Systems, and Algorithms in the CSE department.
+              I'm pursuing a minor in Machine Learning, Systems, and Algorithms in the CSE department, set to complete by 2025. My academic journey is marked by consistent excellence, complemented by a love for singing, art, and chess.
             </p>
             <Button className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect" asChild>
               <Link to="/about">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
@@ -182,7 +197,7 @@ Batch 2022
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {keyCourses.map(course => <div key={course.id} className="glass-card rounded-lg p-6 hover:shadow-lg transition-all border-white/20">
+          {keyCourses.slice(0, 4).map(course => <div key={course.id} className="glass-card rounded-lg p-6 hover:shadow-lg transition-all border-white/20">
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h3 className="text-xl font-bold">{course.title}</h3>

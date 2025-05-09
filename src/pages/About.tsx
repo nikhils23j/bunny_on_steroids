@@ -23,31 +23,42 @@ const About = () => {
       degree: 'B.Tech in Electrical Engineering',
       institution: 'Indian Institute of Technology, Kanpur',
       period: '2022 - Present',
-      description: 'Minor in Machine Learning, Systems, and Algorithms in the CSE department. Current GPA: 9.2/10.0',
+      description: 'Minor in Machine Learning, Systems, and Algorithms in the CSE department. Current GPA: 8.0/10.0',
     },
     {
-      degree: 'High School',
-      institution: 'Delhi Public School',
-      period: '2020 - 2022',
-      description: 'Graduated with distinction. Ranked among top students in science and mathematics.',
+      degree: 'CBSE Class XII',
+      institution: 'M.B. International School, Kota',
+      period: '2022',
+      description: 'Graduated with 95.4% marks, excelling in science and mathematics.',
+    },
+    {
+      degree: 'CBSE Class X',
+      institution: 'M.B. International School, Kota',
+      period: '2020',
+      description: 'Graduated with 96.2% marks, demonstrating strong academic foundation.',
     },
   ];
 
-  const certifications = [
+  const achievements = [
     {
-      name: 'Machine Learning Specialization',
-      issuer: 'Coursera (Stanford University)',
-      date: 'March 2024',
+      name: 'JEE Advanced 2022',
+      issuer: 'Indian Institute of Technology',
+      description: 'Secured All India Rank 1240 among 1.2 lakh candidates.',
     },
     {
-      name: 'Data Structures and Algorithms',
-      issuer: 'CodeChef',
-      date: 'August 2023',
+      name: 'JEE Mains 2022',
+      issuer: 'National Testing Agency',
+      description: 'Secured All India Rank 363 among 1.5 million candidates.',
     },
     {
-      name: 'Embedded Systems Design',
-      issuer: 'Samsung PRISM Program',
-      date: 'January 2024',
+      name: 'KVPY SX 2022',
+      issuer: 'Department of Science and Technology, Govt. of India',
+      description: 'Secured All India Rank 248 in Kishore Vaigyanik Protsahan Yojana.',
+    },
+    {
+      name: 'KVPY SA 2021',
+      issuer: 'Department of Science and Technology, Govt. of India',
+      description: 'Secured All India Rank 41 in Kishore Vaigyanik Protsahan Yojana.',
     },
   ];
 
@@ -79,15 +90,32 @@ const About = () => {
               />
             </div>
             <div className="animate-slide-in">
-              <h2 className="text-3xl font-bold mb-6 text-navy-800">My Journey</h2>
+              <h2 className="text-3xl font-bold mb-6 text-navy-800">About Me</h2>
+              <p className="text-lg text-navy-700 mb-4">
+                I'm Nikhil Jain, a third-year Electrical Engineering undergraduate at IIT Kanpur with a CPI of 8.0/10. Passionate about technology and innovation, I'm currently interning at Samsung Research Bangalore in the networks modem domain, gaining hands-on experience in advanced communication systems.
+              </p>
+              <p className="text-lg text-navy-700 mb-4">
+                I'm pursuing a minor in Machine Learning, Systems, and Algorithms in the CSE department, set to complete by 2025. My academic journey is marked by consistent excellence, complemented by a love for singing, art, and chess.
+              </p>
+              <p className="text-lg text-navy-700">
+                Beyond academics, I document my experiences, insights, and tips on my <a href="https://www.quora.com/profile/Nikhil-Jain-749" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Quora profile</a>, sharing stories from my academic adventures at IIT Kanpur to my professional endeavors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* My Journey Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">My Journey</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white p-8 rounded-lg shadow-md">
               <p className="text-lg text-navy-700 mb-4">
                 My journey as an engineer, learner, and creator is a tapestry of challenges, growth, and curiosity. I document my experiences, insights, and tips on my <a href="https://www.quora.com/profile/Nikhil-Jain-749" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Quora profile</a>, where I share stories from my academic adventures at IIT Kanpur to my professional stint at Samsung Research Bangalore.
               </p>
               <p className="text-lg text-navy-700 mb-4">
                 From mastering complex algorithms to exploring the nuances of embedded systems, every step has shaped my perspective. Whether it's debugging code at midnight or hitting high notes in a song, I thrive on blending discipline with creativity, always chasing the next big idea.
-              </p>
-              <p className="text-lg text-navy-700">
-                I'm a third-year Electrical Engineering student at IIT Kanpur, passionate about technology and innovation. Currently, I'm interning at Samsung Research Bangalore in the networks modem domain, where I'm gaining hands-on experience in cutting-edge communication systems.
               </p>
             </div>
           </div>
@@ -95,7 +123,7 @@ const About = () => {
       </section>
       
       {/* Skills Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">Technical Skills</h2>
           <div className="max-w-3xl mx-auto">
@@ -115,7 +143,7 @@ const About = () => {
       </section>
       
       {/* Education Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">Education</h2>
           <div className="max-w-3xl mx-auto">
@@ -141,24 +169,23 @@ const About = () => {
         </div>
       </section>
       
-      {/* Certifications Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Achievements Section */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">Certifications</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">Scholastic Achievements</h2>
           <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {achievements.map((achievement, index) => (
                 <Card key={index} className="hover:shadow-md hover:bg-white transition-all hover-scale">
-                  <CardContent className="p-6 text-center">
+                  <CardContent className="p-6">
                     <div className="mb-4 text-navy-700">
                       <svg className="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397a1 1 0 011.354-.46l.292.12v-.58a1 1 0 112 0v.58l.292-.12a1 1 0 01.837 1.814l-1.248.534a1 1 0 01-.787 0l-1.248-.534a1 1 0 01-.46-1.354l.29-.35z"></path>
-                        <path d="M9.3 16.095a1 1 0 01-.3-.095l-8-3.5c-.552-.24-.552-1.01 0-1.25L9.3 7.75c.183.081.38.081.6 0l8.4-3.5c.552-.24.552-1.01 0-1.25l-8-3.5a1 1 0 00-.6 0l-8 3.5c-.552.24-.552 1.01 0 1.25l8 3.5a1 1 0 00.6 0l3.7-1.533v1.25a1 1 0 01-.3.875l-4 3.5z"></path>
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                       </svg>
                     </div>
-                    <h3 className="text-lg font-bold text-navy-800">{cert.name}</h3>
-                    <p className="text-navy-600 mb-2">{cert.issuer}</p>
-                    <p className="text-sm text-navy-500">{cert.date}</p>
+                    <h3 className="text-lg font-bold text-navy-800 text-center">{achievement.name}</h3>
+                    <p className="text-navy-600 mb-2 text-center">{achievement.issuer}</p>
+                    <p className="text-sm text-navy-500 text-center">{achievement.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -168,7 +195,7 @@ const About = () => {
       </section>
       
       {/* Interests Section */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">Personal Interests</h2>
           <div className="max-w-3xl mx-auto">
