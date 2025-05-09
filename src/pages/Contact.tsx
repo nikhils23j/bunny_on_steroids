@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -9,47 +8,47 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { Mail, MapPin, ExternalLink, Instagram, Linkedin, Youtube, Music, Phone } from 'lucide-react';
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: '',
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {
+      name,
+      value
+    } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
         title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you as soon as possible.",
+        description: "Thank you for reaching out. I'll get back to you as soon as possible."
       });
       setFormData({
         name: '',
         email: '',
         subject: '',
-        message: '',
+        message: ''
       });
     }, 1500);
   };
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navigation />
       
       {/* Header */}
@@ -98,7 +97,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-navy-800">Location</h3>
-                      <p className="text-navy-600">IIT Kanpur, Computer Science Department</p>
+                      <p className="text-navy-600">IIT Kanpur, Electrical Enginneering Department</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -125,30 +124,25 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-navy-800">Social Media</h3>
                       <div className="flex flex-wrap gap-4 mt-2">
-                        <a href="https://www.linkedin.com/in/nikhil-jain-907100253/" target="_blank" rel="noopener noreferrer" 
-                           className="text-navy-700 hover:text-navy-900 flex items-center">
+                        <a href="https://www.linkedin.com/in/nikhil-jain-907100253/" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Linkedin className="h-5 w-5 mr-1" />
                           <span>LinkedIn</span>
                         </a>
-                        <a href="https://www.instagram.com/nikhils23j/" target="_blank" rel="noopener noreferrer" 
-                           className="text-navy-700 hover:text-navy-900 flex items-center">
+                        <a href="https://www.instagram.com/nikhils23j/" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Instagram className="h-5 w-5 mr-1" />
                           <span>Instagram</span>
                         </a>
-                        <a href="https://www.youtube.com/@nikhiljain307" target="_blank" rel="noopener noreferrer" 
-                           className="text-navy-700 hover:text-navy-900 flex items-center">
+                        <a href="https://www.youtube.com/@nikhiljain307" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Youtube className="h-5 w-5 mr-1" />
                           <span>YouTube</span>
                         </a>
-                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FNikhils23j" target="_blank" rel="noopener noreferrer" 
-                           className="text-navy-700 hover:text-navy-900 flex items-center">
+                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FNikhils23j" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <svg className="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                           </svg>
                           <span>X</span>
                         </a>
-                        <a href="https://open.spotify.com/user/noqynat9gydgisn6afsv4ka0r?si=X129PI2RSWuukYCVN-iAMw" target="_blank" rel="noopener noreferrer" 
-                           className="text-navy-700 hover:text-navy-900 flex items-center">
+                        <a href="https://open.spotify.com/user/noqynat9gydgisn6afsv4ka0r?si=X129PI2RSWuukYCVN-iAMw" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Music className="h-5 w-5 mr-1" />
                           <span>Spotify</span>
                         </a>
@@ -168,59 +162,25 @@ const Contact = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name">Your Name</Label>
-                        <Input 
-                          id="name" 
-                          name="name" 
-                          placeholder="John Doe" 
-                          required 
-                          value={formData.name}
-                          onChange={handleChange}
-                        />
+                        <Input id="name" name="name" placeholder="John Doe" required value={formData.name} onChange={handleChange} />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Your Email</Label>
-                        <Input 
-                          id="email" 
-                          name="email" 
-                          type="email" 
-                          placeholder="john@example.com" 
-                          required 
-                          value={formData.email}
-                          onChange={handleChange}
-                        />
+                        <Input id="email" name="email" type="email" placeholder="john@example.com" required value={formData.email} onChange={handleChange} />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject</Label>
-                      <Input 
-                        id="subject" 
-                        name="subject" 
-                        placeholder="How can I help you?" 
-                        required 
-                        value={formData.subject}
-                        onChange={handleChange}
-                      />
+                      <Input id="subject" name="subject" placeholder="How can I help you?" required value={formData.subject} onChange={handleChange} />
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="message">Message</Label>
-                      <Textarea 
-                        id="message" 
-                        name="message" 
-                        placeholder="Your message here..." 
-                        rows={5} 
-                        required 
-                        value={formData.message}
-                        onChange={handleChange}
-                      />
+                      <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required value={formData.message} onChange={handleChange} />
                     </div>
                     
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-navy-700 hover:bg-navy-800 text-white py-6 text-lg"
-                      disabled={isSubmitting}
-                    >
+                    <Button type="submit" className="w-full bg-navy-700 hover:bg-navy-800 text-white py-6 text-lg" disabled={isSubmitting}>
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
                   </form>
@@ -232,8 +192,6 @@ const Contact = () => {
       </section>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
