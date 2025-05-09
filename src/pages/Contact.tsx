@@ -126,21 +126,25 @@ const Contact = () => {
                       <div className="flex flex-wrap gap-4 mt-2">
                         <a href="https://www.linkedin.com/in/nikhil-jain-907100253/" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Linkedin className="h-5 w-5 mr-1" />
-                          <span>LinkedIn</span>
+                          <span>
+                        </span>
                         </a>
                         <a href="https://www.instagram.com/nikhils23j/" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Instagram className="h-5 w-5 mr-1" />
-                          <span>Instagram</span>
+                          <span>
+                        </span>
                         </a>
                         <a href="https://www.youtube.com/@nikhiljain307" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Youtube className="h-5 w-5 mr-1" />
-                          <span>YouTube</span>
+                          <span>
+                        </span>
                         </a>
                         <a href="https://x.com/i/flow/login?redirect_after_login=%2FNikhils23j" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <svg className="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                           </svg>
-                          <span>X</span>
+                          <span>
+                        </span>
                         </a>
                         <a href="https://open.spotify.com/user/noqynat9gydgisn6afsv4ka0r?si=X129PI2RSWuukYCVN-iAMw" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Music className="h-5 w-5 mr-1" />
