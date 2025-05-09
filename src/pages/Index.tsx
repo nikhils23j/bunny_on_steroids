@@ -1,3 +1,4 @@
+
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -5,73 +6,77 @@ import { Card, CardContent } from '@/components/ui/card';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
-import CodeBlock from '@/components/CodeBlock';
 import GlowingCard from '@/components/GlowingCard';
+
 const Index = () => {
   // Featured Projects
   const featuredProjects = [{
     id: 1,
-    title: 'E-commerce Platform',
-    description: 'Developed a full-stack e-commerce platform with React, Node.js, and MongoDB.',
+    title: 'Car Crash Detection System',
+    description: 'Developed an embedded system that detects car crashes and automatically sends emergency notifications with location data.',
     image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400',
-    tags: ['React', 'Node.js', 'MongoDB']
+    tags: ['Embedded C', 'IoT', 'Sensors']
   }, {
     id: 2,
-    title: 'Mobile Finance App',
-    description: 'Created a personal finance tracking app with React Native and Firebase.',
+    title: 'ML-Based Predictive Maintenance',
+    description: 'Created a machine learning model to predict equipment failures in industrial settings, reducing downtime and maintenance costs.',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=400',
-    tags: ['React Native', 'Firebase', 'UI/UX']
+    tags: ['Python', 'Machine Learning', 'Data Analysis']
   }, {
     id: 3,
-    title: 'Machine Learning Analysis',
-    description: 'Built a machine learning model to analyze student performance data.',
+    title: 'Communication Protocol Simulator',
+    description: 'Built a simulator for testing and analyzing various network protocols under different conditions and traffic loads.',
     image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&h=400',
-    tags: ['Python', 'TensorFlow', 'Data Analysis']
+    tags: ['C++', 'Computer Networks', 'Simulation']
   }];
 
   // Featured Blog Posts
   const featuredPosts = [{
     id: 1,
-    title: 'My First Semester Experience',
-    excerpt: 'Reflections on adjusting to college life and academic challenges during my first semester.',
-    date: 'May 15, 2023',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&h=400'
+    title: 'Third Year Resources',
+    excerpt: 'Discover a treasure trove of curated resources tailored for third-year students aiming to ace internships and placements.',
+    date: 'May 1, 2025',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&h=400',
+    link: 'https://medium.com/@jikhlin23/part-3-8563864a4801'
   }, {
     id: 2,
-    title: 'Landing My First Internship',
-    excerpt: 'How I prepared for interviews and secured my first tech internship during sophomore year.',
-    date: 'August 3, 2023',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&h=400'
+    title: 'IIT K Courses',
+    excerpt: 'Dive into the world of IIT Kanpur\'s cutting-edge courses, specially curated for Electrical Engineering and Computer Science students.',
+    date: 'April 12, 2025',
+    image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=600&h=400',
+    link: 'https://medium.com/@jikhlin23/electrical-engineering-students-in-iitk-62bc057420a8'
   }, {
     id: 3,
-    title: 'Group Project Survival Guide',
-    excerpt: 'Tips and lessons learned from working on team projects with classmates.',
-    date: 'October 22, 2023',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&h=400'
+    title: 'Second Year\'s Note',
+    excerpt: 'Unlock the secrets to thriving in your sophomore year with this comprehensive guide!',
+    date: 'February 8, 2025',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&h=400',
+    link: 'https://medium.com/@jikhlin23/sophomore-year-college-tips-and-resources-cba9d0a43139'
   }];
 
   // Key Courses
   const keyCourses = [{
     id: 1,
     code: 'CS771',
-    title: 'Introduction to Machine Learning',
-    skills: ['Python', 'Algorithms', 'Data Structures']
+    title: 'Machine Learning',
+    skills: ['Python', 'NumPy', 'scikit-learn', 'TensorFlow']
   }, {
     id: 2,
-    code: 'CS250',
-    title: 'Database Systems',
-    skills: ['SQL', 'Database Design', 'Normalization']
+    code: 'CS315',
+    title: 'Databases and Information Systems',
+    skills: ['SQL', 'Database Design', 'ER Modeling']
   }, {
     id: 3,
-    code: 'CS340',
-    title: 'Web Development',
-    skills: ['HTML/CSS', 'JavaScript', 'React']
+    code: 'EE381',
+    title: 'Embedded Systems',
+    skills: ['Embedded C', 'Microcontrollers', 'IoT']
   }, {
     id: 4,
-    code: 'CS420',
-    title: 'Machine Learning',
-    skills: ['Python', 'Neural Networks', 'Statistical Analysis']
+    code: 'CS345',
+    title: 'Algorithms II',
+    skills: ['C++', 'Algorithm Design', 'Complexity Analysis']
   }];
+  
   return <div className="min-h-screen flex flex-col">
       <Navigation />
 
@@ -115,19 +120,17 @@ Batch 2022
           <div className="animate-slide-in">
             <h2 className="text-gradient section-title">About Me</h2>
             <p className="text-lg text-foreground/80 mb-6">
-              I'm a passionate Computer Science student with a focus on web development and data analysis.
-              Currently in my junior year, I've developed skills across multiple programming languages and frameworks.
+              I'm a third-year Electrical Engineering student at IIT Kanpur, passionate about technology and innovation. Currently, I'm interning at Samsung Research Bangalore in the networks modem domain, where I'm gaining hands-on experience in cutting-edge communication systems.
             </p>
             <p className="text-lg text-foreground/80 mb-6">
-              When I'm not coding, you can find me participating in hackathons, contributing to open source,
-              or exploring new technologies through side projects.
+              Beyond academics, I have a knack for singing and am honing my skills in machine learning, quantitative finance, and data structures and algorithms. By 2025, I aim to complete a minor in Machine Learning, Systems, and Algorithms in the CSE department.
             </p>
             <Button className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect" asChild>
               <Link to="/about">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
           <div className="relative rounded-lg overflow-hidden shadow-xl animate-scale-in">
-            <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=600" alt="Student working on a laptop" className="w-full h-full object-cover" />
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" alt="Student working on a laptop" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent mix-blend-multiply"></div>
           </div>
         </div>
@@ -210,7 +213,7 @@ Batch 2022
           <div className="text-center mb-16">
             <h2 className="section-title">Recent Blog Posts</h2>
             <p className="section-subtitle mx-auto">
-              I write about my college experiences, tech trends, and lessons learned along the way.
+              I write about my college experiences, tech insights, and academic journey at IIT Kanpur.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -222,8 +225,10 @@ Batch 2022
                   <div className="text-sm text-foreground/60 mb-2">{post.date}</div>
                   <h3 className="text-xl font-bold mb-2">{post.title}</h3>
                   <p className="text-foreground/70 mb-4">{post.excerpt}</p>
-                  <Button variant="outline" className="w-full hover:bg-primary/10 hover:text-primary border-primary/20">
-                    Read Post
+                  <Button variant="outline" className="w-full hover:bg-primary/10 hover:text-primary border-primary/20" asChild>
+                    <a href={post.link} target="_blank" rel="noopener noreferrer">
+                      Read on Medium
+                    </a>
                   </Button>
                 </CardContent>
               </Card>)}
@@ -243,7 +248,7 @@ Batch 2022
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Let's Connect</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
-            Interested in working together or have questions about my projects?
+            Interested in discussing tech, collaboration, or learning more about my projects?
             Feel free to reach out!
           </p>
           <Button size="lg" className="bg-white text-primary hover:bg-white/90 hover-scale shadow-lg shadow-black/10 ripple-effect" asChild>

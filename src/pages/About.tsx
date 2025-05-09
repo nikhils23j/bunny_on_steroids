@@ -3,49 +3,51 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+import { Link } from 'react-router-dom';
+import { Book, Music, Chess, CodeIcon } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { name: 'HTML/CSS', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'React', level: 80 },
-    { name: 'Node.js', level: 75 },
-    { name: 'Python', level: 85 },
-    { name: 'Java', level: 70 },
-    { name: 'SQL', level: 75 },
-    { name: 'Git', level: 80 },
+    { name: 'Python', level: 90 },
+    { name: 'C++', level: 85 },
+    { name: 'Data Structures & Algorithms', level: 85 },
+    { name: 'Machine Learning', level: 80 },
+    { name: 'Embedded Systems', level: 75 },
+    { name: 'Communication Systems', level: 80 },
+    { name: 'SQL', level: 70 },
+    { name: 'MATLAB', level: 75 },
   ];
 
   const education = [
     {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'University Name',
-      period: '2021 - Present',
-      description: 'Focusing on web development, machine learning, and database systems. Current GPA: 3.8/4.0',
+      degree: 'B.Tech in Electrical Engineering',
+      institution: 'Indian Institute of Technology, Kanpur',
+      period: '2022 - Present',
+      description: 'Minor in Machine Learning, Systems, and Algorithms in the CSE department. Current GPA: 9.2/10.0',
     },
     {
-      degree: 'High School Diploma',
-      institution: 'High School Name',
-      period: '2017 - 2021',
-      description: 'Graduated with honors. Member of the Computer Science Club and Math Team.',
+      degree: 'High School',
+      institution: 'Delhi Public School',
+      period: '2020 - 2022',
+      description: 'Graduated with distinction. Ranked among top students in science and mathematics.',
     },
   ];
 
   const certifications = [
     {
-      name: 'Web Development Bootcamp',
-      issuer: 'Udemy',
-      date: 'March 2022',
+      name: 'Machine Learning Specialization',
+      issuer: 'Coursera (Stanford University)',
+      date: 'March 2024',
     },
     {
-      name: 'Python for Data Science and Machine Learning',
-      issuer: 'Coursera',
-      date: 'August 2022',
+      name: 'Data Structures and Algorithms',
+      issuer: 'CodeChef',
+      date: 'August 2023',
     },
     {
-      name: 'AWS Cloud Practitioner',
-      issuer: 'Amazon Web Services',
-      date: 'January 2023',
+      name: 'Embedded Systems Design',
+      issuer: 'Samsung PRISM Program',
+      date: 'January 2024',
     },
   ];
 
@@ -59,7 +61,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">About Me</h1>
             <p className="text-xl text-gray-200 animate-fade-in">
-              Get to know more about my background, skills, and journey in the world of computer science.
+              Get to know more about my background, skills, and journey in technology and engineering.
             </p>
           </div>
         </div>
@@ -79,16 +81,13 @@ const About = () => {
             <div className="animate-slide-in">
               <h2 className="text-3xl font-bold mb-6 text-navy-800">My Journey</h2>
               <p className="text-lg text-navy-700 mb-4">
-                I'm a passionate Computer Science student currently in my junior year. My journey in technology began when I was 14, 
-                building simple websites and modifying video games. This early fascination evolved into a serious academic pursuit.
+                My journey as an engineer, learner, and creator is a tapestry of challenges, growth, and curiosity. I document my experiences, insights, and tips on my <a href="https://www.quora.com/profile/Nikhil-Jain-749" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Quora profile</a>, where I share stories from my academic adventures at IIT Kanpur to my professional stint at Samsung Research Bangalore.
               </p>
               <p className="text-lg text-navy-700 mb-4">
-                Today, I'm focused on web development, data science, and machine learning. I enjoy solving complex problems and building 
-                applications that make a difference in people's lives.
+                From mastering complex algorithms to exploring the nuances of embedded systems, every step has shaped my perspective. Whether it's debugging code at midnight or hitting high notes in a song, I thrive on blending discipline with creativity, always chasing the next big idea.
               </p>
               <p className="text-lg text-navy-700">
-                Outside of academics, I'm an active member of our university's Computer Science Club, where I collaborate with peers 
-                on exciting projects and help organize workshops for junior students.
+                I'm a third-year Electrical Engineering student at IIT Kanpur, passionate about technology and innovation. Currently, I'm interning at Samsung Research Bangalore in the networks modem domain, where I'm gaining hands-on experience in cutting-edge communication systems.
               </p>
             </div>
           </div>
@@ -175,31 +174,39 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-teal-50 p-6 rounded-lg hover:shadow-md transition-all">
-                <h3 className="text-xl font-bold mb-3 text-teal-800">Technology</h3>
+                <div className="flex items-center mb-3">
+                  <Book className="w-6 h-6 text-teal-800 mr-2" />
+                  <h3 className="text-xl font-bold text-teal-800">Art</h3>
+                </div>
                 <p className="text-navy-700">
-                  I'm passionate about emerging technologies like blockchain, artificial intelligence, and virtual reality. 
-                  I regularly attend tech meetups and follow the latest developments in these fields.
+                  I love expressing myself through sketches and paintings, finding inspiration in everyday moments.
                 </p>
               </div>
               <div className="bg-amber-50 p-6 rounded-lg hover:shadow-md transition-all">
-                <h3 className="text-xl font-bold mb-3 text-amber-800">Outdoor Activities</h3>
+                <div className="flex items-center mb-3">
+                  <Music className="w-6 h-6 text-amber-800 mr-2" />
+                  <h3 className="text-xl font-bold text-amber-800">Singing</h3>
+                </div>
                 <p className="text-navy-700">
-                  I enjoy hiking and photography. Exploring nature helps me clear my mind and find inspiration for creative 
-                  problem-solving approaches in my technical work.
+                  Music is my escape, and I enjoy performing soulful melodies that resonate with my emotions.
                 </p>
               </div>
               <div className="bg-navy-50 p-6 rounded-lg hover:shadow-md transition-all">
-                <h3 className="text-xl font-bold mb-3 text-navy-800">Reading</h3>
+                <div className="flex items-center mb-3">
+                  <Music className="w-6 h-6 text-navy-800 mr-2" />
+                  <h3 className="text-xl font-bold text-navy-800">Making Music</h3>
+                </div>
                 <p className="text-navy-700">
-                  I'm an avid reader of both technical books and science fiction. My favorite authors include Isaac Asimov 
-                  and Neal Stephenson, whose works blend technology with compelling narratives.
+                  Experimenting with beats and tunes, I'm always crafting new sounds to share my stories.
                 </p>
               </div>
               <div className="bg-gray-100 p-6 rounded-lg hover:shadow-md transition-all">
-                <h3 className="text-xl font-bold mb-3 text-gray-800">Music</h3>
+                <div className="flex items-center mb-3">
+                  <Chess className="w-6 h-6 text-gray-800 mr-2" />
+                  <h3 className="text-xl font-bold text-gray-800">Playing Chess</h3>
+                </div>
                 <p className="text-navy-700">
-                  I play guitar in my free time and occasionally perform at campus events. Music offers a creative outlet 
-                  that complements my technical pursuits.
+                  A strategic thinker on the board, I relish the thrill of outsmarting opponents in every match.
                 </p>
               </div>
             </div>

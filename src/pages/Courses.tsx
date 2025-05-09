@@ -9,161 +9,132 @@ const Courses = () => {
   const courses = {
     computerScience: [
       {
-        id: 'cs101',
-        code: 'CS101',
-        title: 'Introduction to Computer Science',
-        semester: 'Fall 2021',
+        id: 'cs771',
+        code: 'CS771',
+        title: 'Machine Learning',
+        semester: 'Fall 2023',
         grade: 'A',
-        skills: ['Python', 'Algorithms', 'Data Structures'],
-        description: 'Foundations of computer science, including programming basics, algorithms, and data structures.',
+        skills: ['Python', 'NumPy', 'scikit-learn', 'TensorFlow'],
+        description: 'Comprehensive course on machine learning algorithms and their applications.',
         topics: [
-          'Programming fundamentals with Python',
-          'Algorithm analysis and design',
-          'Basic data structures (arrays, lists, stacks, queues)',
-          'Introduction to object-oriented programming',
-          'Problem-solving techniques'
+          'Supervised and unsupervised learning',
+          'Linear regression and SVMs',
+          'Neural networks',
+          'Clustering and PCA',
+          'Probabilistic models',
+          'EM algorithm'
         ],
-        project: 'Developed a simple inventory management system using Python and basic data structures.'
+        project: 'Implemented and analyzed classical ML algorithms, involving hands-on experimentation with datasets to evaluate model performance.'
       },
       {
-        id: 'cs201',
-        code: 'CS201',
+        id: 'cs345',
+        code: 'CS345',
+        title: 'Algorithms II',
+        semester: 'Spring 2024',
+        grade: 'A',
+        skills: ['C++', 'Algorithm Design', 'Complexity Analysis'],
+        description: 'Advanced course on algorithm design and analysis with complex theoretical concepts.',
+        topics: [
+          'NP-completeness',
+          'Approximation algorithms',
+          'Randomization',
+          'Amortized analysis',
+          'Linear programming',
+          'Network flows'
+        ],
+        project: 'Designed and implemented algorithms to solve complex competitive coding problems, focusing on efficiency and optimization.'
+      },
+      {
+        id: 'cs315',
+        code: 'CS315',
+        title: 'Databases and Information Systems',
+        semester: 'Fall 2023',
+        grade: 'A-',
+        skills: ['SQL', 'Database Design', 'Python', 'Java'],
+        description: 'Fundamentals of database systems design, implementation, and management.',
+        topics: [
+          'ER modeling',
+          'Relational algebra',
+          'SQL',
+          'Normalization',
+          'Indexing',
+          'Transactions and concurrency control'
+        ],
+        project: 'Developed a Hospital Management System database, designing schemas, implementing complex queries, and managing access controls.'
+      },
+      {
+        id: 'cs425',
+        code: 'CS425',
+        title: 'Computer Networks',
+        semester: 'Spring 2024',
+        grade: 'A',
+        skills: ['C/C++', 'Python', 'Socket Programming'],
+        description: 'In-depth study of computer networks and network programming.',
+        topics: [
+          'TCP/IP stack',
+          'Routing algorithms',
+          'Congestion control',
+          'DNS and HTTP',
+          'Network security basics',
+          'Socket programming'
+        ],
+        project: 'Built a client-server chat system focused on real-time communication and reliability.'
+      },
+      {
+        id: 'eso207',
+        code: 'ESO207',
         title: 'Data Structures and Algorithms',
-        semester: 'Spring 2022',
-        grade: 'A-',
-        skills: ['Java', 'Algorithm Analysis', 'Complex Data Structures'],
-        description: 'Advanced study of data structures and algorithm analysis.',
-        topics: [
-          'Advanced data structures (trees, graphs, hash tables)',
-          'Algorithm design techniques',
-          'Sorting and searching algorithms',
-          'Dynamic programming',
-          'Graph algorithms'
-        ],
-        project: 'Implemented a graph-based social network analysis tool that identified friend clusters.'
-      },
-      {
-        id: 'cs250',
-        code: 'CS250',
-        title: 'Database Systems',
-        semester: 'Fall 2022',
-        grade: 'A',
-        skills: ['SQL', 'Database Design', 'Normalization'],
-        description: 'Fundamentals of database systems, SQL, and database design.',
-        topics: [
-          'Relational database concepts',
-          'SQL query language',
-          'Database design and normalization',
-          'Transaction processing',
-          'Database security'
-        ],
-        project: 'Designed and implemented a comprehensive database system for a fictional university.'
-      },
-      {
-        id: 'cs340',
-        code: 'CS340',
-        title: 'Web Development',
         semester: 'Spring 2023',
-        grade: 'A',
-        skills: ['HTML/CSS', 'JavaScript', 'React', 'Node.js'],
-        description: 'Comprehensive course on modern web development technologies and practices.',
+        grade: 'A+',
+        skills: ['C++', 'Algorithm Design', 'Data Structures'],
+        description: 'Fundamental course on data structures and algorithm design techniques.',
         topics: [
-          'Front-end development with HTML, CSS, and JavaScript',
-          'React framework for single-page applications',
-          'Server-side development with Node.js',
-          'RESTful API design',
-          'Web security best practices'
+          'Arrays and linked lists',
+          'Trees, heaps, and graphs',
+          'Dynamic programming',
+          'Sorting/searching algorithms',
+          'Recursion',
+          'Time and space complexity analysis'
         ],
-        project: 'Built a full-stack web application for event management with user authentication and real-time updates.'
+        project: 'Implemented core data structures and algorithms from scratch, optimizing for performance and scalability.'
       }
     ],
-    mathematics: [
+    electrical: [
       {
-        id: 'math241',
-        code: 'MATH241',
-        title: 'Calculus I',
-        semester: 'Fall 2021',
-        grade: 'B+',
-        skills: ['Differentiation', 'Integration', 'Mathematical Modeling'],
-        description: 'Introduction to differential and integral calculus.',
+        id: 'ee381',
+        code: 'EE381',
+        title: 'Embedded Systems',
+        semester: 'Fall 2023',
+        grade: 'A',
+        skills: ['Embedded C', 'Arduino', 'Microcontrollers', 'I/O Interfacing'],
+        description: 'Hands-on course on embedded systems design and development.',
         topics: [
-          'Limits and continuity',
-          'Derivatives and their applications',
-          'Integration techniques',
-          'Applications of integration',
-          'Mathematical modeling'
+          'Microcontrollers and architecture',
+          'I/O interfacing',
+          'RTOS concepts',
+          'Embedded C programming',
+          'Interrupts and timers',
+          'Communication protocols (UART, SPI, I2C)'
         ],
-        project: 'Applied calculus concepts to solve real-world physics problems.'
+        project: 'Developed a Car Crash Detection and Notification System, using sensors for real-time data acquisition and communication modules for alerts.'
       },
       {
-        id: 'math242',
-        code: 'MATH242',
-        title: 'Calculus II',
-        semester: 'Spring 2022',
-        grade: 'B',
-        skills: ['Series', 'Advanced Integration', 'Parametric Equations'],
-        description: 'Advanced topics in calculus, including series and parametric equations.',
-        topics: [
-          'Sequences and series',
-          'Advanced integration techniques',
-          'Parametric equations',
-          'Polar coordinates',
-          'Applications in physics and engineering'
-        ],
-        project: 'Analyzed convergence of various mathematical series and their applications.'
-      },
-      {
-        id: 'stat330',
-        code: 'STAT330',
-        title: 'Probability and Statistics',
-        semester: 'Fall 2022',
+        id: 'ee321',
+        code: 'EE321',
+        title: 'Communication Systems',
+        semester: 'Spring 2024',
         grade: 'A-',
-        skills: ['Probability Theory', 'Statistical Analysis', 'Data Interpretation'],
-        description: 'Introduction to probability theory and statistical methods.',
+        skills: ['MATLAB', 'Python', 'Signal Processing'],
+        description: 'Study of analog and digital communication systems and techniques.',
         topics: [
-          'Probability concepts and theorems',
-          'Random variables and distributions',
-          'Descriptive statistics',
-          'Inferential statistics',
-          'Hypothesis testing'
+          'Modulation techniques (AM, FM, PM)',
+          'Sampling theorem',
+          'Noise analysis',
+          'Digital communication',
+          'Error detection/correction',
+          'Information theory basics'
         ],
-        project: 'Conducted statistical analysis on a dataset of student performance factors.'
-      }
-    ],
-    electives: [
-      {
-        id: 'psych101',
-        code: 'PSYCH101',
-        title: 'Introduction to Psychology',
-        semester: 'Spring 2022',
-        grade: 'A',
-        skills: ['Psychological Theory', 'Human Behavior Analysis', 'Critical Thinking'],
-        description: 'Overview of basic psychological theories and human behavior.',
-        topics: [
-          'Cognitive psychology',
-          'Developmental psychology',
-          'Social psychology',
-          'Abnormal psychology',
-          'Research methods in psychology'
-        ],
-        project: 'Designed and conducted a small-scale psychological experiment on memory recall.'
-      },
-      {
-        id: 'econ201',
-        code: 'ECON201',
-        title: 'Microeconomics',
-        semester: 'Fall 2022',
-        grade: 'B+',
-        skills: ['Economic Theory', 'Market Analysis', 'Critical Thinking'],
-        description: 'Principles of microeconomics, including supply and demand, market structures, and resource allocation.',
-        topics: [
-          'Supply and demand analysis',
-          'Consumer and producer theory',
-          'Market structures and competition',
-          'Resource allocation and efficiency',
-          'Government intervention and regulation'
-        ],
-        project: 'Analyzed a local market\'s pricing strategies and competitive dynamics.'
+        project: 'Simulated various modulation schemes and digital signal transmission, analyzing performance under different noise conditions.'
       }
     ]
   };
@@ -178,7 +149,7 @@ const Courses = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">My Courses</h1>
             <p className="text-xl text-gray-200 animate-fade-in">
-              An overview of the key courses I've completed or am currently taking during my academic journey.
+              An overview of the key courses I've completed during my academic journey at IIT Kanpur.
             </p>
           </div>
         </div>
@@ -197,16 +168,10 @@ const Courses = () => {
                   Computer Science
                 </TabsTrigger>
                 <TabsTrigger 
-                  value="mathematics" 
+                  value="electrical" 
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Mathematics
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="electives" 
-                  className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
-                >
-                  Electives
+                  Electrical Engineering
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -261,9 +226,9 @@ const Courses = () => {
               </div>
             </TabsContent>
             
-            <TabsContent value="mathematics" className="space-y-8">
+            <TabsContent value="electrical" className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {courses.mathematics.map((course) => (
+                {courses.electrical.map((course) => (
                   <Card key={course.id} className="overflow-hidden hover:shadow-md transition-all">
                     <CardContent className="p-0">
                       <div className="bg-teal-700 text-white p-4">
@@ -310,56 +275,6 @@ const Courses = () => {
                 ))}
               </div>
             </TabsContent>
-            
-            <TabsContent value="electives" className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {courses.electives.map((course) => (
-                  <Card key={course.id} className="overflow-hidden hover:shadow-md transition-all">
-                    <CardContent className="p-0">
-                      <div className="bg-amber-600 text-white p-4">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <h3 className="text-xl font-bold">{course.title}</h3>
-                            <p className="text-amber-100">{course.code} - {course.semester}</p>
-                          </div>
-                          <span className="bg-white text-amber-800 px-2 py-1 rounded-full text-sm font-semibold">
-                            {course.grade}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="p-4">
-                        <p className="text-navy-600 mb-4">{course.description}</p>
-                        <Accordion type="single" collapsible className="w-full">
-                          <AccordionItem value="topics">
-                            <AccordionTrigger className="text-navy-800">Key Topics</AccordionTrigger>
-                            <AccordionContent>
-                              <ul className="list-disc pl-5 space-y-1 text-navy-600">
-                                {course.topics.map((topic, index) => (
-                                  <li key={index}>{topic}</li>
-                                ))}
-                              </ul>
-                            </AccordionContent>
-                          </AccordionItem>
-                          <AccordionItem value="project">
-                            <AccordionTrigger className="text-navy-800">Course Project</AccordionTrigger>
-                            <AccordionContent>
-                              <p className="text-navy-600">{course.project}</p>
-                            </AccordionContent>
-                          </AccordionItem>
-                        </Accordion>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                          {course.skills.map(skill => (
-                            <span key={skill} className="bg-amber-100 text-amber-700 px-2 py-1 rounded-md text-sm">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
           </Tabs>
         </div>
       </section>
@@ -379,11 +294,11 @@ const Courses = () => {
                   </li>
                   <li className="flex items-center">
                     <span className="w-3 h-3 bg-navy-700 rounded-full mr-2"></span>
-                    Java
+                    C++
                   </li>
                   <li className="flex items-center">
                     <span className="w-3 h-3 bg-navy-700 rounded-full mr-2"></span>
-                    JavaScript
+                    Embedded C
                   </li>
                   <li className="flex items-center">
                     <span className="w-3 h-3 bg-navy-700 rounded-full mr-2"></span>
@@ -391,59 +306,59 @@ const Courses = () => {
                   </li>
                   <li className="flex items-center">
                     <span className="w-3 h-3 bg-navy-700 rounded-full mr-2"></span>
-                    HTML/CSS
+                    MATLAB
                   </li>
                 </ul>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
-                <h3 className="text-xl font-bold mb-4 text-navy-800 border-b pb-2">Web Technologies</h3>
+                <h3 className="text-xl font-bold mb-4 text-navy-800 border-b pb-2">Computer Science</h3>
                 <ul className="space-y-2 text-navy-700">
                   <li className="flex items-center">
                     <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
-                    React
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
-                    Node.js
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
-                    Express
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
-                    MongoDB
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
-                    RESTful APIs
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
-                <h3 className="text-xl font-bold mb-4 text-navy-800 border-b pb-2">Data Science</h3>
-                <ul className="space-y-2 text-navy-700">
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
-                    Data Analysis
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
-                    Statistics
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
                     Machine Learning
                   </li>
                   <li className="flex items-center">
+                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
+                    Data Structures & Algorithms
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
+                    Database Systems
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
+                    Computer Networks
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-3 h-3 bg-teal-700 rounded-full mr-2"></span>
+                    Socket Programming
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all">
+                <h3 className="text-xl font-bold mb-4 text-navy-800 border-b pb-2">Electrical Engineering</h3>
+                <ul className="space-y-2 text-navy-700">
+                  <li className="flex items-center">
                     <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
-                    NumPy/Pandas
+                    Embedded Systems
                   </li>
                   <li className="flex items-center">
                     <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
-                    Data Visualization
+                    Microcontroller Programming
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
+                    Communication Systems
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
+                    Signal Processing
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-3 h-3 bg-amber-600 rounded-full mr-2"></span>
+                    Sensor Integration
                   </li>
                 </ul>
               </div>
