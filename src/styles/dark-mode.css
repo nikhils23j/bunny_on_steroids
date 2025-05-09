@@ -61,3 +61,60 @@
 .dark .glass-morphism {
   @apply backdrop-blur-xl bg-gray-900/80 border border-gray-700;
 }
+
+/* Enhanced dark mode styling for improved readability */
+.dark a:hover {
+  @apply text-blue-400 transition-colors duration-300;
+}
+
+.dark .hover\:scale-105:hover {
+  @apply shadow-blue-400/20;
+}
+
+.dark button:hover,
+.dark .button:hover {
+  @apply bg-blue-600 border-blue-400;
+}
+
+.dark .bg-navy-600 {
+  @apply bg-navy-800;
+}
+
+/* Make Personal Interests section more readable in dark mode */
+.dark .bg-navy-600 p,
+.dark .bg-navy-600 h3 {
+  @apply text-white;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-gray-700;
+}
+
+.dark .bg-gray-100 h3,
+.dark .bg-gray-100 p {
+  @apply text-white;
+}
+
+/* Ensure form elements are readable in dark mode */
+.dark input,
+.dark textarea {
+  @apply bg-gray-800 border-gray-600 text-white;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  @apply text-gray-400;
+}
+
+/* Improve tab contrast in dark mode */
+.dark .tabs-list {
+  @apply bg-gray-800;
+}
+
+.dark .tabs-trigger[data-state="active"] {
+  @apply bg-blue-600 text-white;
+}
+
+.dark .tabs-trigger[data-state="inactive"] {
+  @apply text-gray-300 hover:text-white;
+}

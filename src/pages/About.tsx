@@ -1,10 +1,9 @@
-
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Link } from 'react-router-dom';
-import { Book, Music, GamepadIcon, CodeIcon } from 'lucide-react';
+import { Book, Music, GamepadIcon } from 'lucide-react';
 
 const About = () => {
   const skills = [
@@ -82,7 +81,7 @@ const About = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl animate-scale-in">
+            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl animate-scale-in hover:scale-105 transition-all duration-300">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600" 
                 alt="Student portrait" 
@@ -110,7 +109,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">My Journey</h2>
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="bg-white p-8 rounded-lg shadow-md hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-3">
               <p className="text-lg text-navy-700 mb-4">
                 My journey as an engineer, learner, and creator is a tapestry of challenges, growth, and curiosity. I document my experiences, insights, and tips on my <a href="https://www.quora.com/profile/Nikhil-Jain-749" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Quora profile</a>, where I share stories from my academic adventures at IIT Kanpur to my professional stint at Samsung Research Bangalore.
               </p>
@@ -129,7 +128,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {skills.map((skill) => (
-                <div key={skill.name} className="mb-4">
+                <div key={skill.name} className="mb-4 hover:scale-105 transition-all duration-300">
                   <div className="flex justify-between mb-1">
                     <span className="font-medium text-navy-700">{skill.name}</span>
                     <span className="text-navy-600">{skill.level}%</span>
@@ -149,7 +148,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               {education.map((edu, index) => (
-                <Card key={index} className="hover:shadow-md transition-all border-l-4 border-l-navy-700">
+                <Card key={index} className="hover:shadow-md transition-all border-l-4 border-l-navy-700 hover:scale-105 hover:border-3">
                   <CardContent className="p-6">
                     <div className="flex justify-between items-start flex-wrap">
                       <div>
@@ -176,7 +175,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {achievements.map((achievement, index) => (
-                <Card key={index} className="hover:shadow-md hover:bg-white transition-all hover-scale">
+                <Card key={index} className="hover:shadow-md hover:bg-white transition-all hover:scale-105 hover:border-3">
                   <CardContent className="p-6">
                     <div className="mb-4 text-navy-700">
                       <svg className="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -200,34 +199,34 @@ const About = () => {
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">Personal Interests</h2>
           <div className="max-w-3xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-teal-50 p-6 rounded-lg hover:shadow-md transition-all">
+              <div className="bg-navy-600 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3 text-white">
                 <div className="flex items-center mb-3">
-                  <Book className="w-6 h-6 text-teal-800 mr-2" />
-                  <h3 className="text-xl font-bold text-teal-800">Art</h3>
+                  <Book className="w-6 h-6 text-white mr-2" />
+                  <h3 className="text-xl font-bold text-white">Art</h3>
                 </div>
-                <p className="text-navy-700">
+                <p className="text-white/90">
                   I love expressing myself through sketches and paintings, finding inspiration in everyday moments.
                 </p>
               </div>
-              <div className="bg-amber-50 p-6 rounded-lg hover:shadow-md transition-all">
+              <div className="bg-navy-600 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3 text-white">
                 <div className="flex items-center mb-3">
-                  <Music className="w-6 h-6 text-amber-800 mr-2" />
-                  <h3 className="text-xl font-bold text-amber-800">Singing</h3>
+                  <Music className="w-6 h-6 text-white mr-2" />
+                  <h3 className="text-xl font-bold text-white">Singing</h3>
                 </div>
-                <p className="text-navy-700">
+                <p className="text-white/90">
                   Music is my escape, and I enjoy performing soulful melodies that resonate with my emotions.
                 </p>
               </div>
-              <div className="bg-navy-50 p-6 rounded-lg hover:shadow-md transition-all">
+              <div className="bg-navy-600 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3 text-white">
                 <div className="flex items-center mb-3">
-                  <Music className="w-6 h-6 text-navy-800 mr-2" />
-                  <h3 className="text-xl font-bold text-navy-800">Making Music</h3>
+                  <Music className="w-6 h-6 text-white mr-2" />
+                  <h3 className="text-xl font-bold text-white">Making Music</h3>
                 </div>
-                <p className="text-navy-700">
+                <p className="text-white/90">
                   Experimenting with beats and tunes, I'm always crafting new sounds to share my stories.
                 </p>
               </div>
-              <div className="bg-gray-100 p-6 rounded-lg hover:shadow-md transition-all">
+              <div className="bg-gray-100 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3">
                 <div className="flex items-center mb-3">
                   <GamepadIcon className="w-6 h-6 text-gray-800 mr-2" />
                   <h3 className="text-xl font-bold text-gray-800">Playing Chess</h3>

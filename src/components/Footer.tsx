@@ -1,5 +1,7 @@
+
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Twitter, Code, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Twitter, Code, Mail, MapPin, Phone } from 'lucide-react';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-gradient-to-br from-primary/90 to-secondary/90 text-white py-16">
@@ -15,13 +17,13 @@ const Footer = () => {
               <a href="https://github.com/nikhiljain" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <a href="https://linkedin.com/in/nikhil-jain-907100253" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <a href="https://twitter.com/Nikhils23j" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="mailto:contact@nikhiljain.com" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
+              <a href="mailto:nikhilj22@iitk.ac.in" className="bg-white/10 p-2 rounded-full hover:bg-white/20 transition-colors">
                 <Mail className="h-5 w-5" />
               </a>
             </div>
@@ -44,15 +46,19 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center text-white/80">
                 <Mail className="h-4 w-4 mr-2 text-accent/80" />
-                nikhil@github.edu
+                <a href="mailto:nikhilj22@iitk.ac.in" className="hover:text-white transition-colors">nikhilj22@iitk.ac.in</a>
               </li>
               <li className="flex items-center text-white/80">
                 <MapPin className="h-4 w-4 mr-2 text-accent/80" />
-                University Campus
+                IIT Kanpur, Kalyanpur, Kanpur, Uttar Pradesh 208016
               </li>
               <li className="text-white/80 flex items-center">
                 <Code className="h-4 w-4 mr-2 text-accent/80" />
-                Computer Science
+                Electrical Engineering
+              </li>
+              <li className="text-white/80 flex items-center">
+                <Phone className="h-4 w-4 mr-2 text-accent/80" />
+                <a href="tel:+918619744807" className="hover:text-white transition-colors">+91 8619744807</a>
               </li>
             </ul>
             

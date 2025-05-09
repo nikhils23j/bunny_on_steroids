@@ -67,11 +67,10 @@
     --input: 217 33% 18%;
     --ring: 258 90% 66%;
   }
-}
-
-@layer base {
+  
   * {
     @apply border-border;
+    scroll-behavior: smooth; /* Added smooth scrolling for all elements */
   }
 
   body {
@@ -167,6 +166,11 @@
     transform: scale(0, 0);
     opacity: 0.3;
     transition: 0s;
+  }
+  
+  /* Enhanced hover effects for cards and blocks */
+  .hover-card-effect {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-[3px] border;
   }
 }
 

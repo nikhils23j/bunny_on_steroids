@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -8,31 +9,90 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { Mail, MapPin, ExternalLink, Instagram, Linkedin, Youtube, Music, Phone } from 'lucide-react';
+
 const Contact = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
+    
+    // Clear error when user types
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
+  
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = { ...errors };
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+      valid = false;
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+      valid = false;
+    }
+    
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+      valid = false;
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+      valid = false;
+    }
+    
+    setErrors(newErrors);
+    return valid;
+  };
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      toast({
+        title: "Form Error",
+        description: "Please fill out all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
-
+    
+    // Create mailto link as fallback
+    const mailtoLink = `mailto:jikhlin23@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+    
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -40,6 +100,11 @@ const Contact = () => {
         title: "Message Sent!",
         description: "Thank you for reaching out. I'll get back to you as soon as possible."
       });
+      
+      // Open mailto link as fallback
+      window.location.href = mailtoLink;
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
@@ -48,7 +113,9 @@ const Contact = () => {
       });
     }, 1500);
   };
-  return <div className="min-h-screen flex flex-col">
+  
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navigation />
       
       {/* Header */}
@@ -76,7 +143,7 @@ const Contact = () => {
               </p>
               
               <div className="space-y-6">
-                <Card className="hover:shadow-md transition-all border-l-4 border-l-navy-700">
+                <Card className="hover:shadow-md transition-all border-l-4 border-l-navy-700 hover:scale-105 hover:border-3">
                   <CardContent className="p-6 flex items-start">
                     <div className="h-12 w-12 rounded-full bg-navy-100 flex items-center justify-center mr-4">
                       <Mail className="h-6 w-6 text-navy-700" />
@@ -90,19 +157,19 @@ const Contact = () => {
                   </CardContent>
                 </Card>
                 
-                <Card className="hover:shadow-md transition-all border-l-4 border-l-teal-700">
+                <Card className="hover:shadow-md transition-all border-l-4 border-l-teal-700 hover:scale-105 hover:border-3">
                   <CardContent className="p-6 flex items-start">
                     <div className="h-12 w-12 rounded-full bg-teal-100 flex items-center justify-center mr-4">
                       <MapPin className="h-6 w-6 text-teal-700" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-navy-800">Location</h3>
-                      <p className="text-navy-600">IIT Kanpur, Electrical Enginneering Department</p>
+                      <p className="text-navy-600">IIT Kanpur, Electrical Engineering Department</p>
                     </div>
                   </CardContent>
                 </Card>
                 
-                <Card className="hover:shadow-md transition-all border-l-4 border-l-amber-600">
+                <Card className="hover:shadow-md transition-all border-l-4 border-l-amber-600 hover:scale-105 hover:border-3">
                   <CardContent className="p-6 flex items-start">
                     <div className="h-12 w-12 rounded-full bg-amber-100 flex items-center justify-center mr-4">
                       <Phone className="h-6 w-6 text-amber-600" />
@@ -116,7 +183,7 @@ const Contact = () => {
                   </CardContent>
                 </Card>
                 
-                <Card className="hover:shadow-md transition-all border-l-4 border-l-purple-600">
+                <Card className="hover:shadow-md transition-all border-l-4 border-l-purple-600 hover:scale-105 hover:border-3">
                   <CardContent className="p-6 flex items-start">
                     <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
                       <ExternalLink className="h-6 w-6 text-purple-600" />
@@ -126,25 +193,21 @@ const Contact = () => {
                       <div className="flex flex-wrap gap-4 mt-2">
                         <a href="https://www.linkedin.com/in/nikhil-jain-907100253/" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Linkedin className="h-5 w-5 mr-1" />
-                          <span>
-                        </span>
+                          <span>LinkedIn</span>
                         </a>
                         <a href="https://www.instagram.com/nikhils23j/" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Instagram className="h-5 w-5 mr-1" />
-                          <span>
-                        </span>
+                          <span>Instagram</span>
                         </a>
                         <a href="https://www.youtube.com/@nikhiljain307" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Youtube className="h-5 w-5 mr-1" />
-                          <span>
-                        </span>
+                          <span>YouTube</span>
                         </a>
                         <a href="https://x.com/i/flow/login?redirect_after_login=%2FNikhils23j" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <svg className="h-5 w-5 mr-1" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                           </svg>
-                          <span>
-                        </span>
+                          <span>Twitter (X)</span>
                         </a>
                         <a href="https://open.spotify.com/user/noqynat9gydgisn6afsv4ka0r?si=X129PI2RSWuukYCVN-iAMw" target="_blank" rel="noopener noreferrer" className="text-navy-700 hover:text-navy-900 flex items-center">
                           <Music className="h-5 w-5 mr-1" />
@@ -159,29 +222,67 @@ const Contact = () => {
             
             {/* Contact Form */}
             <div>
-              <Card className="shadow-md">
+              <Card className="shadow-md hover:shadow-lg transition-all hover:scale-105 hover:border-3">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold mb-6 text-navy-800">Send Me a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="name">Your Name</Label>
-                        <Input id="name" name="name" placeholder="John Doe" required value={formData.name} onChange={handleChange} />
+                        <Input 
+                          id="name" 
+                          name="name" 
+                          placeholder="John Doe" 
+                          required 
+                          value={formData.name} 
+                          onChange={handleChange} 
+                          className={errors.name ? "border-red-500" : ""}
+                        />
+                        {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Your Email</Label>
-                        <Input id="email" name="email" type="email" placeholder="john@example.com" required value={formData.email} onChange={handleChange} />
+                        <Input 
+                          id="email" 
+                          name="email" 
+                          type="email" 
+                          placeholder="john@example.com" 
+                          required 
+                          value={formData.email} 
+                          onChange={handleChange} 
+                          className={errors.email ? "border-red-500" : ""}
+                        />
+                        {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" name="subject" placeholder="How can I help you?" required value={formData.subject} onChange={handleChange} />
+                      <Input 
+                        id="subject" 
+                        name="subject" 
+                        placeholder="How can I help you?" 
+                        required 
+                        value={formData.subject} 
+                        onChange={handleChange} 
+                        className={errors.subject ? "border-red-500" : ""}
+                      />
+                      {errors.subject && <p className="text-sm text-red-500">{errors.subject}</p>}
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="message">Message</Label>
-                      <Textarea id="message" name="message" placeholder="Your message here..." rows={5} required value={formData.message} onChange={handleChange} />
+                      <Textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="Your message here..." 
+                        rows={5} 
+                        required 
+                        value={formData.message} 
+                        onChange={handleChange} 
+                        className={errors.message ? "border-red-500" : ""}
+                      />
+                      {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
                     </div>
                     
                     <Button type="submit" className="w-full bg-navy-700 hover:bg-navy-800 text-white py-6 text-lg" disabled={isSubmitting}>
@@ -196,6 +297,8 @@ const Contact = () => {
       </section>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;

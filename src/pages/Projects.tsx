@@ -116,10 +116,10 @@ const Projects = () => {
             <TabsContent value={activeTab} className="mt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredProjects.map((project) => (
-                  <Card key={project.id} className="overflow-hidden hover-scale hover:shadow-lg transition-all">
+                  <Card key={project.id} className="overflow-hidden hover:scale-105 hover:shadow-lg transition-all duration-300 hover:border-3 border">
                     <div className="h-52 overflow-hidden">
                       <img 
-                        src={project.image} 
+                        src={project.id === 2 ? 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&h=400' : project.image} 
                         alt={project.title} 
                         className="w-full h-full object-cover transition-transform hover:scale-105"
                       />
@@ -161,22 +161,22 @@ const Projects = () => {
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">My Development Process</h2>
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="p-6 text-center">
+              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
                 <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
                 <h3 className="text-xl font-bold mb-3 text-navy-800">Research</h3>
                 <p className="text-navy-600">Understanding the problem and researching potential solutions.</p>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
                 <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
                 <h3 className="text-xl font-bold mb-3 text-navy-800">Design</h3>
                 <p className="text-navy-600">Creating wireframes and planning the architecture.</p>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
                 <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
                 <h3 className="text-xl font-bold mb-3 text-navy-800">Develop</h3>
                 <p className="text-navy-600">Coding the solution with clean, efficient code.</p>
               </div>
-              <div className="p-6 text-center">
+              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
                 <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
                 <h3 className="text-xl font-bold mb-3 text-navy-800">Test & Deploy</h3>
                 <p className="text-navy-600">Thorough testing and deployment to production.</p>
