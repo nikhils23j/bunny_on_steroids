@@ -102,7 +102,7 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 font-serif">
               <span className="text-gradient text-fuchsia-800">Hi, I'm Nikhil.</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-10 text-foreground/80">IIT Kanput  Y22 | Electrical Engineering</p>
+            <p className="text-xl md:text-2xl mb-10 text-foreground/80">IIT Kanpur Y22 | Electrical Engineering</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 shadow-lg shadow-primary/20 ripple-effect" asChild>
                 <Link to="/projects">View Projects</Link>
