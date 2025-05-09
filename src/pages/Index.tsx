@@ -53,8 +53,8 @@ const Index = () => {
   // Key Courses
   const keyCourses = [{
     id: 1,
-    code: 'CS101',
-    title: 'Introduction to Computer Science',
+    code: 'CS771',
+    title: 'Introduction to Machine Learning',
     skills: ['Python', 'Algorithms', 'Data Structures']
   }, {
     id: 2,
