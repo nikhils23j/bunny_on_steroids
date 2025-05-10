@@ -89,7 +89,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-xl animate-scale-in hover:scale-105 transition-all duration-300">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600"
+                src="public/lovable-uploads/l3.jpeg"
                 alt="Student portrait"
                 className="w-full h-full object-cover"
               />
