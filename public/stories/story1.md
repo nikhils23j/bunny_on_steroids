@@ -106,7 +106,6 @@ And oh, I claimed to have done _some normal_.
 - **Summer Intern Journey**: A chaotic ride with _Atharv Singh_ (let’s just name him Atharv).
 - **Samsung Dholakha**: Probability of both bros bombing it? _High._
 - **Internship Struggles**: _“Hello, Papa, intern ki to maa chud gayi yaar.”_
-  - Congrats to _Anisha (Amazon)_, _Siddhi Vora & Riyanshu Kumar (Siemens)_, _Shreya Shree (Microsoft)_.
 - **Win/Lun Philosophy**: Win some, lose some, learn a ton.
 - **EEA Award**: A proud moment!
 - **Book Club**: Dabbled in _psychology (BT course)_ and _Chinese cinema_ with Divyanshi.
@@ -117,9 +116,7 @@ And oh, I claimed to have done _some normal_.
 - **World Cup (India vs Australia)**: We won, baby!
 - **Parents at my birthday**: Wholesome vibes.
 - **Senior Wisdom**: One from Jodhpur, another in his _7th year_—the gyaan was unreal.
-- **Treasure Hunt**: _“Chudti h to chude, use chudna h wo chudegi.”_
 - **Gandhi Jayanti Poster**: Made it for _PPOC_.
-- **Antaragni Hustle**: Offered to pack a girl’s stuff if she came to prom with me (CSE TA had my back).
 - **NNN Challenge**: Lasted _6 days_.
 - **Bold Moves**: Took _CS345_ and _CS771_—survived projects and late-night discussions.
 - **Professor Sayak Ray Choudhary**: Believed in me when I doubted myself.
