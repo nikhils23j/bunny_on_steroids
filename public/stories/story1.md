@@ -167,3 +167,11 @@ _Days this was followed:_ **0** (the smallest number possible).
 3. **Reward**: Healthy snacks (dry fruits), skincare, or a podcast sleep timer.
 
 ---
+
+## My Friendship Life in 3 Parts 🧠
+
+1. Rishikesh
+2. Rishikesh
+3. Rishikesh
+
+---
