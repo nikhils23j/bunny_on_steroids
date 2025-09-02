@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 
 const imageList = [
-  "/lovable-uploads/image1.jpg",
-  "/lovable-uploads/l1.jpeg",
+  "/lovable-uploads/a4.jpeg",
+  "/lovable-uploads/m4.jpeg",
+  "/lovable-uploads/a1.jpeg",
+  "/lovable-uploads/m1.jpeg",
+  "/lovable-uploads/m2.jpeg",
+  "/lovable-uploads/a2.jpeg",
   "/lovable-uploads/p4.jpeg",
-  "/lovable-uploads/p6.jpeg",
-  "/lovable-uploads/p3.jpeg",
-  "/lovable-uploads/sq1.png",
 ];
 
 export default function HeroBackground() {
