@@ -1,0 +1,148 @@
+
+/* Dark Mode Styling */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  @apply text-gray-50; /* Off-white for headings */
+}
+
+.dark p,
+.dark span,
+.dark div,
+.dark li {
+  @apply text-gray-200; /* Light gray for text */
+}
+
+.dark a:hover,
+.dark button:hover {
+  @apply text-blue-400; /* Light blue for hover effects */
+}
+
+.dark .card,
+.dark .glass-card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+.dark .bg-white,
+.dark .bg-gray-50,
+.dark .bg-gray-100 {
+  @apply bg-gray-800;
+}
+
+.dark .bg-navy-100 {
+  @apply bg-navy-800 text-gray-100;
+}
+
+.dark .text-navy-700,
+.dark .text-navy-800 {
+  @apply text-gray-100;
+}
+
+.dark .text-navy-600 {
+  @apply text-gray-300;
+}
+
+.dark .border-white {
+  @apply border-gray-700;
+}
+
+/* Interactive elements */
+.dark .hover\:bg-primary\/10:hover {
+  @apply bg-primary/20 text-gray-100;
+}
+
+.dark .glass-morphism {
+  @apply backdrop-blur-xl bg-gray-900/80 border border-gray-700;
+}
+
+/* Enhanced dark mode styling for improved readability */
+.dark a:hover {
+  @apply text-blue-400 transition-colors duration-300;
+}
+
+.dark .hover\:scale-105:hover {
+  @apply shadow-blue-400/20;
+}
+
+.dark button:hover,
+.dark .button:hover {
+  @apply bg-blue-600 border-blue-400;
+}
+
+.dark .bg-navy-600 {
+  @apply bg-navy-800;
+}
+
+/* Make Personal Interests section more readable in dark mode */
+.dark .bg-navy-600 p,
+.dark .bg-navy-600 h3 {
+  @apply text-white;
+}
+
+.dark .bg-gray-100 {
+  @apply bg-gray-700;
+}
+
+.dark .bg-gray-100 h3,
+.dark .bg-gray-100 p {
+  @apply text-white;
+}
+
+/* Ensure form elements are readable in dark mode */
+.dark input,
+.dark textarea {
+  @apply bg-gray-800 border-gray-600 text-white;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  @apply text-gray-400;
+}
+
+/* Improve tab contrast in dark mode */
+.dark .tabs-list {
+  @apply bg-gray-800;
+}
+
+.dark .tabs-trigger[data-state="active"] {
+  @apply bg-blue-600 text-white;
+}
+
+.dark .tabs-trigger[data-state="inactive"] {
+  @apply text-gray-300 hover:text-white;
+}
+
+/* Hero section dark mode styling */
+.dark .hero-gradient-overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+
+.dark .hero-background-image {
+  filter: brightness(0.7);
+}
+
+.dark .particles-container {
+  opacity: 0.5;
+}
+
+/* Button styling in dark mode */
+.dark .resume-button {
+  @apply bg-primary text-white border-primary hover:bg-primary/80 hover:border-primary/80;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
+}
+
+.dark .resume-button:hover {
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+}
+
+/* Scroll indicator in dark mode */
+.dark .scroll-indicator {
+  @apply text-gray-300;
+}
