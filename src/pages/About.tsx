@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Link } from "react-router-dom";
 import { Book, Music, GamepadIcon } from "lucide-react";
@@ -182,6 +184,17 @@ const About = () => {
                 From mastering complex algorithms to exploring the nuances of
                 embedded systems, ... I'd always take a sip of coffee before
                 resuming again. And repeat. And repeat again.
+              </p>
+              <p>
+                <Button
+                  className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
+                  asChild
+                >
+                  <Link to="/Projects">
+                    My Projects
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </p>
             </div>
 
