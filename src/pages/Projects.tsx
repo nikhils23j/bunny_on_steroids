@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Github, ChevronDown, ChevronUp } from "lucide-react";
+import { Github } from "lucide-react";
+import ProjectModal from "@/components/ProjectModal";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
-  const [expandedProject, setExpandedProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const projects = [
     {
@@ -176,6 +178,16 @@ const Projects = () => {
       ? projects
       : projects.filter((project) => project.category === activeTab);
 
+  const handleProjectClick = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -234,84 +246,66 @@ const Projects = () => {
             </div>
 
             <TabsContent value={activeTab} className="mt-8">
-              <div className="max-w-5xl mx-auto space-y-6">
-                {filteredProjects.map((project) => (
-                  <Card
-                    key={project.id}
-                    className="overflow-hidden hover:scale-[1.02] hover:shadow-lg transition-all duration-300 hover:border-2 border cursor-pointer"
-                    onClick={() =>
-                      setExpandedProject(
-                        expandedProject === project.id ? null : project.id
-                      )
-                    }
-                  >
-                    <div className="flex flex-col md:flex-row">
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {filteredProjects.map((project) => (
+                    <Card
+                      key={project.id}
+                      className="overflow-hidden hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                      onClick={() => handleProjectClick(project)}
+                    >
                       {/* Image Section */}
-                      <div className="md:w-1/3 h-48 md:h-auto overflow-hidden">
+                      <div className="h-48 overflow-hidden">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-transform hover:scale-105"
+                          className="w-full h-full object-cover transition-transform group-hover:scale-105"
                         />
                       </div>
 
                       {/* Content Section */}
-                      <div className="md:w-2/3 p-6">
-                        <div className="flex items-start justify-between mb-4">
-                          <h3 className="text-xl font-bold text-navy-800 flex-1 mr-4">
+                      <div className="p-4">
+                        <div className="flex items-start justify-between mb-3">
+                          <h3 className="text-lg font-bold text-navy-800 flex-1 mr-2 line-clamp-2">
                             {project.title}
                           </h3>
-                          <div className="flex items-center gap-2">
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="p-2"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                window.open(project.github, "_blank");
-                              }}
-                            >
-                              <Github className="h-4 w-4" />
-                            </Button>
-                            {expandedProject === project.id ? (
-                              <ChevronUp className="h-5 w-5 text-navy-600" />
-                            ) : (
-                              <ChevronDown className="h-5 w-5 text-navy-600" />
-                            )}
-                          </div>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="p-2 shrink-0"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(project.github, "_blank");
+                            }}
+                          >
+                            <Github className="h-4 w-4" />
+                          </Button>
                         </div>
 
-                        <p className="text-navy-600 mb-4">
+                        <p className="text-navy-600 mb-3 text-sm line-clamp-3">
                           {project.description}
                         </p>
 
                         {/* Tags */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tags.map((tag) => (
+                        <div className="flex flex-wrap gap-1">
+                          {project.tags.slice(0, 4).map((tag) => (
                             <span
                               key={tag}
-                              className="bg-navy-100 text-navy-700 px-3 py-1 rounded-full text-sm font-medium"
+                              className="bg-navy-100 text-navy-700 px-2 py-1 rounded-full text-xs font-medium"
                             >
                               {tag}
                             </span>
                           ))}
+                          {project.tags.length > 4 && (
+                            <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs">
+                              +{project.tags.length - 4}
+                            </span>
+                          )}
                         </div>
-
-                        {/* Expanded Content */}
-                        {expandedProject === project.id && (
-                          <div className="mt-4 pt-4 border-t border-gray-200 animate-fade-in">
-                            <h4 className="font-semibold text-navy-800 mb-2">
-                              Additional Details:
-                            </h4>
-                            <p className="text-navy-600 leading-relaxed">
-                              {project.expandedInfo}
-                            </p>
-                          </div>
-                        )}
                       </div>
-                    </div>
-                  </Card>
-                ))}
+                    </Card>
+                  ))}
+                </div>
               </div>
             </TabsContent>
           </Tabs>
@@ -319,6 +313,13 @@ const Projects = () => {
       </section>
 
       <Footer />
+      
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+      />
     </div>
   );
 };
