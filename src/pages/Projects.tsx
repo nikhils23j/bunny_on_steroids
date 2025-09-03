@@ -234,29 +234,30 @@ const Projects = () => {
             </div>
 
             <TabsContent value={activeTab} className="mt-8">
-              <div className="max-w-5xl mx-auto space-y-6">
-                {filteredProjects.map((project) => (
-                  <Card
-                    key={project.id}
-                    className="overflow-hidden hover:scale-[1.02] hover:shadow-lg transition-all duration-300 hover:border-2 border cursor-pointer"
-                    onClick={() =>
-                      setExpandedProject(
-                        expandedProject === project.id ? null : project.id
-                      )
-                    }
-                  >
-                    <div className="flex flex-col md:flex-row">
-                      {/* Image Section */}
-                      <div className="md:w-1/3 h-48 md:h-auto overflow-hidden">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform hover:scale-105"
-                        />
-                      </div>
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {filteredProjects.map((project) => (
+                    <Card
+                      key={project.id}
+                      className="overflow-hidden hover:scale-[1.02] hover:shadow-lg transition-all duration-300 hover:border-2 border cursor-pointer aspect-square flex flex-col"
+                      onClick={() =>
+                        setExpandedProject(
+                          expandedProject === project.id ? null : project.id
+                        )
+                      }
+                    >
+                      <div className="flex flex-col h-full">
+                        {/* Image Section */}
+                        <div className="h-48 overflow-hidden">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform hover:scale-105"
+                          />
+                        </div>
 
-                      {/* Content Section */}
-                      <div className="md:w-2/3 p-6">
+                        {/* Content Section */}
+                        <div className="p-6 flex-1 flex flex-col">
                         <div className="flex items-start justify-between mb-4">
                           <h3 className="text-xl font-bold text-navy-800 flex-1 mr-4">
                             {project.title}
@@ -308,10 +309,11 @@ const Projects = () => {
                             </p>
                           </div>
                         )}
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                ))}
+                    </Card>
+                  ))}
+                </div>
               </div>
             </TabsContent>
           </Tabs>
