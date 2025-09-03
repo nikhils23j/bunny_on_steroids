@@ -1,0 +1,228 @@
+{
+  "mathematics": [
+    {
+      "id": "MTH111M",
+      "code": "MTH111M",
+      "title": "Single Variable Calculus",
+      "semester": "Fall 2022",
+      "grade": "C",
+      "skills": ["Calculus", "Mathematical Analysis"],
+      "description": "Introduction to limits, derivatives, and integrals of single-variable functions.",
+      "topics": ["Limits", "Derivatives", "Integrals", "Series"]
+    },
+    {
+      "id": "MTH112M",
+      "code": "MTH112M",
+      "title": "Application of Single & Several Variable Calculus",
+      "semester": "Fall 2022",
+      "grade": "C",
+      "skills": ["Multivariable Calculus", "Applications"],
+      "description": "Covers advanced applications of calculus including multivariable functions.",
+      "topics": ["Partial Derivatives", "Multiple Integrals", "Optimization"]
+    },
+    {
+      "id": "MTH113M",
+      "code": "MTH113M",
+      "title": "Linear Algebra",
+      "semester": "Spring 2023",
+      "grade": "B",
+      "skills": ["Linear Algebra", "Matrix Theory"],
+      "description": "Fundamentals of linear algebra and matrix operations.",
+      "topics": ["Vector Spaces", "Eigenvalues", "Matrix Factorization"]
+    },
+    {
+      "id": "MTH114M",
+      "code": "MTH114M",
+      "title": "Ordinary Differential Equations",
+      "semester": "Spring 2023",
+      "grade": "B+",
+      "skills": ["Differential Equations", "Modeling"],
+      "description": "Study of first and second order differential equations and their applications.",
+      "topics": ["First-order ODEs", "Second-order ODEs", "Laplace Transforms"]
+    },
+    {
+      "id": "MSO202M",
+      "code": "MSO202M",
+      "title": "Complex Variables",
+      "semester": "Fall 2023",
+      "grade": "C+",
+      "skills": ["Complex Analysis", "Functions of Complex Variables"],
+      "description": "Introduction to complex functions and analysis techniques.",
+      "topics": ["Analytic Functions", "Contour Integration", "Residue Theorem"]
+    },
+    {
+      "id": "MSO203M",
+      "code": "MSO203M",
+      "title": "Partial Differential Equations",
+      "semester": "Fall 2023",
+      "grade": "D+",
+      "skills": ["PDEs", "Mathematical Modeling"],
+      "description": "Study of classical partial differential equations and methods of solving them.",
+      "topics": ["Wave Equation", "Heat Equation", "Laplace Equation"]
+    },
+    {
+      "id": "MSO201",
+      "code": "MSO201",
+      "title": "Probability and Statistics",
+      "semester": "Spring 2024",
+      "grade": "B+",
+      "skills": ["Probability", "Statistics", "Data Analysis"],
+      "description": "Covers probability theory, random variables, and statistical inference.",
+      "topics": [
+        "Probability Distributions",
+        "Expectation",
+        "Hypothesis Testing"
+      ]
+    }
+  ],
+
+  "computerScience": [
+    {
+      "id": "ESO207",
+      "code": "ESO207",
+      "title": "Data Structure and Algorithms",
+      "semester": "Spring 2024",
+      "grade": "A",
+      "skills": ["C++", "Algorithms", "Problem Solving"],
+      "description": "Fundamental course on designing and analyzing algorithms and data structures.",
+      "topics": ["Arrays", "Trees", "Graphs", "Sorting", "Dynamic Programming"]
+    },
+    {
+      "id": "CS345",
+      "code": "CS345",
+      "title": "Algorithms-II",
+      "semester": "Fall 2024",
+      "grade": "C+",
+      "skills": ["Advanced Algorithms", "Optimization"],
+      "description": "Continuation of algorithms focusing on advanced techniques and complexity.",
+      "topics": ["Graph Algorithms", "Network Flow", "Approximation Algorithms"]
+    },
+    {
+      "id": "CS315",
+      "code": "CS315",
+      "title": "Principles of Database Systems",
+      "semester": "Spring 2025",
+      "grade": "C",
+      "skills": ["Databases", "SQL", "Systems"],
+      "description": "Introduction to database design, SQL, and transaction management.",
+      "topics": [
+        "ER Modeling",
+        "Relational Algebra",
+        "Normalization",
+        "Indexing"
+      ]
+    },
+    {
+      "id": "CS425",
+      "code": "CS425",
+      "title": "Computer Networks",
+      "semester": "Spring 2025",
+      "grade": "B+",
+      "skills": ["Networking", "TCP/IP", "Distributed Systems"],
+      "description": "Introduction to principles of computer networks and protocols.",
+      "topics": [
+        "OSI Model",
+        "IP Routing",
+        "Transport Protocols",
+        "Network Security"
+      ]
+    }
+  ],
+
+  "machineLearning": [
+    {
+      "id": "CS771",
+      "code": "CS771",
+      "title": "Introduction to Machine Learning",
+      "semester": "Fall 2024",
+      "grade": "B+",
+      "skills": ["Machine Learning", "Python", "Model Training"],
+      "description": "Core ML course covering supervised and unsupervised learning.",
+      "topics": [
+        "Regression",
+        "Classification",
+        "Clustering",
+        "Neural Networks"
+      ],
+      "project": "Implemented a classification model comparing SVMs and Neural Networks."
+    },
+    {
+      "id": "EE708",
+      "code": "EE708",
+      "title": "Fundamentals of Data Science and Machine Intelligence",
+      "semester": "Spring 2025",
+      "grade": "B+",
+      "skills": ["Data Science", "AI", "Model Building"],
+      "description": "Course introducing data science methods and intelligent algorithms.",
+      "topics": [
+        "Data Preprocessing",
+        "Feature Engineering",
+        "Ensemble Methods"
+      ],
+      "project": "Built a predictive analytics model on large datasets."
+    }
+  ],
+
+  "electricalEngineering": [
+    {
+      "id": "EE200",
+      "code": "EE200",
+      "title": "Signals, Systems and Networks",
+      "semester": "Fall 2023",
+      "grade": "B+",
+      "skills": ["Signal Processing", "System Theory"],
+      "description": "Introduction to signals, system analysis, and electrical networks.",
+      "topics": ["Fourier Analysis", "Convolution", "LTI Systems"]
+    },
+    {
+      "id": "EE210",
+      "code": "EE210",
+      "title": "Analog Electronics",
+      "semester": "Spring 2024",
+      "grade": "B",
+      "skills": ["Electronics", "Circuit Design"],
+      "description": "Study of analog electronic devices and microelectronics.",
+      "topics": ["Diodes", "Transistors", "Amplifiers"]
+    },
+    {
+      "id": "EE250",
+      "code": "EE250",
+      "title": "Control Systems Analysis",
+      "semester": "Spring 2024",
+      "grade": "C",
+      "skills": ["Control Systems", "Feedback Systems"],
+      "description": "Course on modeling and analyzing control systems.",
+      "topics": ["Stability", "Root Locus", "Frequency Response"]
+    },
+    {
+      "id": "EE320",
+      "code": "EE320",
+      "title": "Principles of Communications",
+      "semester": "Fall 2024",
+      "grade": "B+",
+      "skills": ["Communication Systems", "Signals"],
+      "description": "Covers principles of analog and digital communication systems.",
+      "topics": ["Modulation", "Noise Analysis", "Information Theory"]
+    },
+    {
+      "id": "EE370",
+      "code": "EE370",
+      "title": "Digital Electronics",
+      "semester": "Fall 2024",
+      "grade": "C+",
+      "skills": ["Digital Circuits", "Logic Design"],
+      "description": "Study of logic gates, combinational and sequential circuits.",
+      "topics": ["Boolean Algebra", "Flip-Flops", "Counters"]
+    },
+    {
+      "id": "EE321",
+      "code": "EE321",
+      "title": "Communication Systems",
+      "semester": "Spring 2025",
+      "grade": "B+",
+      "skills": ["Digital Communication", "Modulation"],
+      "description": "Extension of principles of communication with focus on digital methods.",
+      "topics": ["Digital Modulation", "Error Correction", "Channel Coding"]
+    }
+  ]
+}
