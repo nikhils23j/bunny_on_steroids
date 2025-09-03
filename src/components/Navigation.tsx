@@ -51,20 +51,15 @@ const Navigation = () => {
       icon: BookOpen,
     },
     {
-      name: "Blog",
-      path: "/blog",
-      icon: Bookmark,
-    },
-    {
-      name: "Stories",
+      name: "B/S",
       path: "/story",
       icon: PenTool,
     },
-    {
-      name: "Contact",
-      path: "/contact",
-      icon: MessageSquare,
-    },
+    // {
+    //   name: "Contact",
+    //   path: "/contact",
+    //   icon: MessageSquare,
+    // },
   ];
   const isActive = (path: string) => location.pathname === path;
   return (
