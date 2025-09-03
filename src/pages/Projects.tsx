@@ -7,6 +7,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Github } from "lucide-react";
 import ProjectModal from "@/components/ProjectModal";
 
+// Import project images
+import computerNetworksImg from "@/assets/project-computer-networks.jpg";
+import driverSynthesisImg from "@/assets/project-driver-synthesis.jpg";
+import multimodalMLImg from "@/assets/project-multimodal-ml.jpg";
+import bankruptcyPredictionImg from "@/assets/project-bankruptcy-prediction.jpg";
+import algorithmsImg from "@/assets/project-algorithms.jpg";
+import computerVisionImg from "@/assets/project-computer-vision.jpg";
+import nlpImg from "@/assets/project-nlp.jpg";
+import iotCrashDetectionImg from "@/assets/project-iot-crash-detection.jpg";
+import hospitalManagementImg from "@/assets/project-hospital-management.jpg";
+
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
@@ -18,8 +29,7 @@ const Projects = () => {
       title: "Computer Networks",
       description:
         "Built a multi-threaded TCP chat server, DNS resolvers, and raw-socket TCP client handling SYN, SYN-ACK, and ACK packets for protocol-level understanding.",
-      image:
-        "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&h=400",
+      image: computerNetworksImg,
       tags: ["C++", "Sockets", "DNS", "TCP/IP"],
       github: "https://github.com/Jikhlin23/CS425-ComputerNetworks",
       demo: "https://demo-link.com",
@@ -35,8 +45,7 @@ const Projects = () => {
       title: "Driver Synthesis & I–V Data Analysis",
       description:
         "Automated instrument control and I–V characterization pipelines using PyVISA, QCoDeS, and PyQt dashboards for real-time lab experiments.",
-      image:
-        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=600&h=400",
+      image: driverSynthesisImg,
       tags: ["Python", "PyVISA", "QCoDeS", "PyQt5"],
       github:
         "https://github.com/Jikhlin23/Driver-Synthesis-I-V-Data-Analysis-Spintronic-Instruments",
@@ -53,8 +62,7 @@ const Projects = () => {
       title: "Multi-Modal Classification & Lifelong Learning",
       description:
         "Implemented SVMs, GRUs, ViTs, and continual learning systems for multi-modal data, achieving high accuracy while mitigating catastrophic forgetting.",
-      image:
-        "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=600&h=400",
+      image: multimodalMLImg,
       tags: ["Python", "ML", "GRU", "ViT", "UDA"],
       github: "https://github.com/Jikhlin23/CS_771-Intro-to-ML",
       demo: "https://demo-link.com",
@@ -72,8 +80,7 @@ const Projects = () => {
       title: "Bankruptcy Prediction using ML",
       description:
         "Designed imbalanced classification models achieving 0.94 AUC and 69.7% recall using decision trees, random forests, and sampling techniques.",
-      image:
-        "https://images.unsplash.com/photo-1534665482403-a909d0d97c67?auto=format&fit=crop&w=600&h=400",
+      image: bankruptcyPredictionImg,
       tags: ["Python", "ML", "SMOTE", "Decision Trees"],
       github:
         "https://github.com/Jikhlin23/EE708-Introduction-to-data-science-and-machine-intelligence",
@@ -90,8 +97,7 @@ const Projects = () => {
       title: "Advanced Algorithms",
       description:
         "Implemented KMP, Ford–Fulkerson, Edmonds–Karp, KD-Trees, and DSU along with shortest path and spanning tree algorithms.",
-      image:
-        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&h=400",
+      image: algorithmsImg,
       tags: ["C++", "Algorithms", "DSU", "Graph Theory"],
       github: "https://github.com",
       demo: "https://demo-link.com",
@@ -106,8 +112,7 @@ const Projects = () => {
       title: "Computer Vision & Drones 101",
       description:
         "Built image calibration, chessboard detection, hybridization, contour mapping, and Hough transform pipelines for CV applications.",
-      image:
-        "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=600&h=400",
+      image: computerVisionImg,
       tags: ["OpenCV", "Python", "Computer Vision"],
       github: "https://github.com",
       demo: "https://demo-link.com",
@@ -123,8 +128,7 @@ const Projects = () => {
       title: "Advanced NLP for Text Analysis",
       description:
         "Developed n-gram models, TF-IDF pipelines, KNN classifiers, semantic embeddings, and custom subword tokenizers from scratch.",
-      image:
-        "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?auto=format&fit=crop&w=600&h=400",
+      image: nlpImg,
       tags: ["Python", "NLP", "Embeddings", "Tokenization"],
       github: "https://github.com",
       demo: "https://demo-link.com",
@@ -142,8 +146,7 @@ const Projects = () => {
       title: "IoT Car Crash Detection & Alert System",
       description:
         "Built an ESP32-based IoT crash detection system using accelerometer and GPS sensors with real-time Telegram emergency alerts.",
-      image:
-        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&h=400",
+      image: iotCrashDetectionImg,
       tags: ["Embedded C++", "IoT", "ESP32", "Sensors"],
       github: "https://github.com/Jikhlin23/EE381",
       demo: "https://demo-link.com",
@@ -159,8 +162,7 @@ const Projects = () => {
       title: "Hospital Management System",
       description:
         "Designed a 3NF-normalized hospital database with 16+ entities, optimized SQL queries, and real-time operational workflows.",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=400",
+      image: hospitalManagementImg,
       tags: ["MySQL", "SQL", "Database Design"],
       github: "https://github.com/Jikhlin23/CS315",
       demo: "https://demo-link.com",
