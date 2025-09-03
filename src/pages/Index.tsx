@@ -199,27 +199,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">
-            Let's Connect
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/80">
-            Interested in discussing tech, collaboration, or learning more about
-            my projects? Feel free to reach out!
-          </p>
-          <Button
-            size="lg"
-            className="bg-white text-primary hover:bg-white/90 hover-scale shadow-lg shadow-black/10 ripple-effect"
-            asChild
-          >
-            <Link to="/contact">Get In Touch</Link>
-          </Button>
-        </div>
-      </section>
 
       <Footer />
     </div>
