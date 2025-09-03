@@ -318,61 +318,6 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Project Process */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">
-            My Development Process
-          </h2>
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
-                <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  1
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-navy-800">
-                  Research
-                </h3>
-                <p className="text-navy-600">
-                  Understanding the problem and researching potential solutions.
-                </p>
-              </div>
-              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
-                <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  2
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-navy-800">Design</h3>
-                <p className="text-navy-600">
-                  Creating wireframes and planning the architecture.
-                </p>
-              </div>
-              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
-                <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  3
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-navy-800">
-                  Develop
-                </h3>
-                <p className="text-navy-600">
-                  Coding the solution with clean, efficient code.
-                </p>
-              </div>
-              <div className="p-6 text-center hover:scale-105 hover:shadow-md transition-all duration-300 hover:border-3 border bg-white rounded-lg">
-                <div className="w-16 h-16 bg-navy-700 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  4
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-navy-800">
-                  Test & Deploy
-                </h3>
-                <p className="text-navy-600">
-                  Thorough testing and deployment to production.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

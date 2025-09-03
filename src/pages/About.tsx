@@ -94,8 +94,7 @@ const About = () => {
               About Me
             </h1>
             <p className="text-xl text-gray-200 animate-fade-in">
-              Get to know more about my background, skills, and journey in
-              technology and engineering.
+              Sarcastically funny sometimes (work culture safe)
             </p>
           </div>
         </div>
@@ -117,17 +116,28 @@ const About = () => {
                 About Me
               </h2>
               <p className="text-lg text-navy-700 mb-4">
-                I'm Nikhil Jain, a third-year Electrical Engineering
-                undergraduate at IIT Kanpur with a CPI of 8.1/10. Passionate
-                about technology and innovation, I'm currently interning at
-                Samsung Research Bangalore in the networks modem domain, gaining
-                hands-on experience in advanced communication systems.
+                Kudos for coming to this page. You're taking the first step in
+                thinking about hiring me.
               </p>
               <p className="text-lg text-navy-700 mb-4">
-                I'm pursuing a minor in Machine Learning, Systems, and
-                Algorithms in the CSE department, set to complete by 2025. My
-                academic journey is marked by consistent excellence,
-                complemented by a love for singing, art, and chess.
+                Well, if you really want to hire me, here is a little bit about
+                me -{" "}
+                <a
+                  href=" https://drive.google.com/file/d/1beYeqm0cgBAxc1EkFuaVrzK8VhFbngCh/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  {" "}
+                  resume{" "}
+                </a>
+                . I bet if you pause here and take a look at it, and then resume
+                judging me, you'd like me more then.
+              </p>
+              <p className="text-lg text-navy-700 mb-4"></p>
+              <p className="text-lg text-navy-700 mb-4">
+                I'll get hired in roles if they are in SDE or finance. But if
+                you are Richie Rich, I'd get hired in any role you want me to.
               </p>
               <p className="text-lg text-navy-700">
                 Beyond academics, I document my experiences, insights, and tips
@@ -151,33 +161,37 @@ const About = () => {
       {/* My Journey Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">
+          {/* Left aligned heading */}
+          <h2 className="text-3xl font-bold mb-10 text-left text-navy-800">
             My Journey
           </h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-md hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-3">
-              <p className="text-lg text-navy-700 mb-4">
-                My journey as an engineer, learner, and creator is a tapestry of
-                challenges, growth, and curiosity. I document my experiences,
-                insights, and tips on my{" "}
-                <a
-                  href="https://www.quora.com/profile/Nikhil-Jain-749"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  Quora profile
-                </a>
-                , where I share stories from my academic adventures at IIT
-                Kanpur to my professional stint at Samsung Research Bangalore.
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Text on the left */}
+            <div className="animate-fade-in leading-relaxed">
+              <p className="text-lg text-navy-700 mb-6">
+                The years in college, I absolutely loved taking challenges—
+                particularly if that challenge was doing CSE courses. What could
+                I do, I wanted to get HIRED. Then I interned at{" "}
+                <b>Samsung R&D Institute India - Bangalore</b> as a Software
+                Developer Intern, an absolute cesspool of geniuses. I'd work on
+                something cool and then walk away to see the city lights at
+                night. Well, that was fun.
               </p>
-              <p className="text-lg text-navy-700 mb-4">
+              <p className="text-lg text-navy-700">
                 From mastering complex algorithms to exploring the nuances of
-                embedded systems, every step has shaped my perspective. Whether
-                it's debugging code at midnight or hitting high notes in a song,
-                I thrive on blending discipline with creativity, always chasing
-                the next big idea.
+                embedded systems, ... I'd always take a sip of coffee before
+                resuming again. And repeat. And repeat again.
               </p>
+            </div>
+
+            {/* Image on the right */}
+            <div className="relative h-96 rounded-lg overflow-hidden shadow-xl animate-scale-in transition-transform duration-300 hover:scale-105">
+              <img
+                src="lovable-uploads/22.jpg"
+                alt="Journey illustration"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -219,81 +233,6 @@ const About = () => {
                 >
                   {item}
                 </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">
-            Education
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <Card
-                  key={index}
-                  className="hover:shadow-md transition-all border-l-4 border-l-navy-700 hover:scale-105 hover:border-3"
-                >
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start flex-wrap">
-                      <div>
-                        <h3 className="text-xl font-bold text-navy-800">
-                          {edu.degree}
-                        </h3>
-                        <p className="text-navy-600">{edu.institution}</p>
-                      </div>
-                      <span className="bg-navy-100 text-navy-700 px-3 py-1 rounded-full text-sm">
-                        {edu.period}
-                      </span>
-                    </div>
-                    <p className="mt-4 text-gray-600">{edu.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">
-            Scholastic Achievements
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {achievements.map((achievement, index) => (
-                <Card
-                  key={index}
-                  className="hover:shadow-md hover:bg-white transition-all hover:scale-105 hover:border-3"
-                >
-                  <CardContent className="p-6">
-                    <div className="mb-4 text-navy-700">
-                      <svg
-                        className="w-12 h-12 mx-auto"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                      </svg>
-                    </div>
-                    <h3 className="text-lg font-bold text-navy-800 text-center">
-                      {achievement.name}
-                    </h3>
-                    <p className="text-navy-600 mb-2 text-center">
-                      {achievement.issuer}
-                    </p>
-                    <p className="text-sm text-navy-500 text-center">
-                      {achievement.description}
-                    </p>
-                  </CardContent>
-                </Card>
               ))}
             </div>
           </div>

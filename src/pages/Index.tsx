@@ -163,26 +163,28 @@ const Index = () => {
       <section className="container-section" id="about">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in">
-            <h2 className="text-gradient section-title">About Me</h2>
+            <h2 className="text-gradient section-title"> Why Me ?</h2>
             <p className="text-lg text-foreground/80 mb-6">
-              I'm Nikhil Jain, a third-year Electrical Engineering undergraduate
-              at IIT Kanpur with a CPI of 8.1/10. Passionate about technology
-              and innovation, I'm currently interning at Samsung Research
-              Bangalore in the networks modem domain, gaining hands-on
-              experience in advanced communication systems.
+              A tortoise 🐢 was in a race with a crocodile 🐊 this time, I
+              betted against sir croc cause eh tortoise won before. Now both
+              slow, one was moving at his max speed acc. to his spedometer, and
+              the other cared less, lept his mouth open and said- I AM HIRING.
             </p>
             <p className="text-lg text-foreground/80 mb-6">
-              I'm pursuing a minor in Machine Learning, Systems, and Algorithms
-              in the CSE department, set to complete by 2025. My academic
-              journey is marked by consistent excellence, complemented by a love
-              for singing, art, and chess.
+              Thats when I switched sides.
             </p>
+            <p className="text-lg text-foreground/80 mb-6">
+              What can i do ? I wanted to get hired.
+            </p>
+            {/* <p className="text-lg text-foreground/80 mb-6">
+              A. Cause you were hiring. And also
+            </p> */}
             <Button
               className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
               asChild
             >
               <Link to="/about">
-                Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                About me <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
@@ -193,68 +195,6 @@ const Index = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent mix-blend-multiply"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background to-background/90 -z-10"></div>
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] -z-10"></div>
-
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Recent Blog Posts</h2>
-            <p className="section-subtitle mx-auto">
-              I write about my college experiences, tech insights, and academic
-              journey at IIT Kanpur.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredPosts.map((post) => (
-              <Card
-                key={post.id}
-                className="overflow-hidden hover-scale hover:shadow-lg transition-all bg-white/50 backdrop-blur-sm border border-white/30"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="text-sm text-foreground/60 mb-2">
-                    {post.date}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                  <p className="text-foreground/70 mb-4">{post.excerpt}</p>
-                  <Button
-                    variant="outline"
-                    className="w-full hover:bg-primary/10 hover:text-primary border-primary/20"
-                    asChild
-                  >
-                    <a
-                      href={post.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Read on Medium
-                    </a>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Button
-              className="bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/20 hover:opacity-90 ripple-effect"
-              asChild
-            >
-              <Link to="/blog">
-                View All Posts <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

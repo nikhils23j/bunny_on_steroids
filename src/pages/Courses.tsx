@@ -387,13 +387,7 @@ const Courses = () => {
                             <h3 className="text-xl font-bold">
                               {course.title}
                             </h3>
-                            <p className="text-navy-100">
-                              {course.code} - {course.semester}
-                            </p>
                           </div>
-                          <span className="bg-white text-navy-800 px-2 py-1 rounded-full text-sm font-semibold">
-                            {course.grade}
-                          </span>
                         </div>
                       </div>
                       <div className="p-4">
@@ -454,13 +448,7 @@ const Courses = () => {
                             <h3 className="text-xl font-bold">
                               {course.title}
                             </h3>
-                            <p className="text-teal-100">
-                              {course.code} - {course.semester}
-                            </p>
                           </div>
-                          <span className="bg-white text-teal-800 px-2 py-1 rounded-full text-sm font-semibold">
-                            {course.grade}
-                          </span>
                         </div>
                       </div>
                       <div className="p-4">
@@ -575,13 +563,7 @@ const Courses = () => {
                             <h3 className="text-xl font-bold">
                               {course.title}
                             </h3>
-                            <p className="text-amber-100">
-                              {course.code} - {course.semester}
-                            </p>
                           </div>
-                          <span className="bg-white text-amber-800 px-2 py-1 rounded-full text-sm font-semibold">
-                            {course.grade}
-                          </span>
                         </div>
                       </div>
                       <div className="p-4">

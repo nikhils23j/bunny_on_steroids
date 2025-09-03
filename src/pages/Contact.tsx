@@ -108,20 +108,21 @@ const Contact = () => {
 
     // Show sending state briefly for UI feedback
     setIsSubmitting(true);
-    
+
     // Brief timeout to show the sending state
     setTimeout(() => {
       // Open email client with the mailto link
       window.location.href = mailtoLink;
-      
+
       setIsSubmitting(false);
-      
+
       // Show toast notification
       toast({
         title: "Email Client Opened",
-        description: "Your default email application has been opened with your message.",
+        description:
+          "Your default email application has been opened with your message.",
       });
-      
+
       // Optional: Reset form after successful submission
       setFormData({
         name: "",
