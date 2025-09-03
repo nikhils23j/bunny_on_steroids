@@ -20,7 +20,9 @@ import hospitalManagementImg from "@/assets/project-hospital-management.jpg";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const projects = [
@@ -180,7 +182,7 @@ const Projects = () => {
       ? projects
       : projects.filter((project) => project.category === activeTab);
 
-  const handleProjectClick = (project: typeof projects[0]) => {
+  const handleProjectClick = (project: (typeof projects)[0]) => {
     setSelectedProject(project);
     setIsModalOpen(true);
   };
@@ -230,19 +232,19 @@ const Projects = () => {
                   value="Machine Learning"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Machine Learning
+                  ML
                 </TabsTrigger>
                 <TabsTrigger
                   value="Systems"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Computer Systems
+                  Systems
                 </TabsTrigger>
                 <TabsTrigger
                   value="Development"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Development
+                  Devops
                 </TabsTrigger>
               </TabsList>
             </div>
@@ -315,7 +317,7 @@ const Projects = () => {
       </section>
 
       <Footer />
-      
+
       {/* Project Modal */}
       <ProjectModal
         project={selectedProject}

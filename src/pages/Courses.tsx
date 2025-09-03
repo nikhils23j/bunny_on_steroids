@@ -349,25 +349,25 @@ const Courses = () => {
                   value="computerScience"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Computer Science
+                  CS
                 </TabsTrigger>
                 <TabsTrigger
                   value="electrical"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Electrical Engineering
+                  EE
                 </TabsTrigger>
                 <TabsTrigger
                   value="mathematics"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Mathematics
+                  Math
                 </TabsTrigger>
                 <TabsTrigger
                   value="machineLearning"
                   className="data-[state=active]:bg-navy-700 data-[state=active]:text-white"
                 >
-                  Machine Learning
+                  ML
                 </TabsTrigger>
               </TabsList>
             </div>
