@@ -266,8 +266,8 @@ const About = () => {
                   <h3 className="text-xl font-bold text-white">Art</h3>
                 </div>
                 <p className="text-white/90">
-                  I love expressing myself through sketches and paintings,
-                  finding inspiration in everyday moments.
+                  I sketched faces and scenes a few long years back. I'm ready
+                  to give it another shot, someday.
                 </p>
               </div>
               <div className="bg-navy-600 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3 text-white">
@@ -276,8 +276,8 @@ const About = () => {
                   <h3 className="text-xl font-bold text-white">Singing</h3>
                 </div>
                 <p className="text-white/90">
-                  Music is my escape, and I enjoy performing soulful melodies
-                  that resonate with my emotions.
+                  Music is my escape, for sure. I'll listen and sing for hours.
+                  English and Hingi, New and retro.
                 </p>
               </div>
               <div className="bg-navy-600 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3 text-white">
@@ -286,8 +286,8 @@ const About = () => {
                   <h3 className="text-xl font-bold text-white">Making Music</h3>
                 </div>
                 <p className="text-white/90">
-                  Experimenting with beats and tunes, I'm always crafting new
-                  sounds to share my stories.
+                  What i can say , people make friends, I stay with GarageBand
+                  at home.
                 </p>
               </div>
               <div className="bg-navy-600 p-6 rounded-lg hover:shadow-md transition-all hover:scale-105 hover:border-3 text-white">
@@ -298,8 +298,8 @@ const About = () => {
                   </h3>
                 </div>
                 <p className="text-white/90">
-                  A strategic thinker on the board, I relish the thrill of
-                  outsmarting opponents in every match.
+                  Yeah Thats a game , none can't beat me, until you are 1750 or
+                  higher at rating. :/
                 </p>
               </div>
             </div>
