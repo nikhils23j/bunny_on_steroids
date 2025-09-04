@@ -210,6 +210,26 @@ const About = () => {
         </div>
       </section>
 
+      {/* Google Developer Group Banner */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="relative w-full rounded-lg overflow-hidden shadow-xl">
+            {/* Desktop Banner */}
+            <img
+              src="/lovable-uploads/35d55906-9081-4470-accc-851548194455.png"
+              alt="Google Developer Group - Indian Institute of Technology Kanpur"
+              className="hidden md:block w-full h-auto object-cover"
+            />
+            {/* Mobile Banner */}
+            <img
+              src="/lovable-uploads/3b949e08-8cf5-4b18-a78c-55a480a1dea0.png"
+              alt="Google Developer Group - Indian Institute of Technology Kanpur"
+              className="block md:hidden w-full h-auto object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center text-navy-800">
