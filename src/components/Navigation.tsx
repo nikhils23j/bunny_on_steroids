@@ -112,59 +112,41 @@ const Navigation = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-2">
+        {/* Mobile Theme Toggle */}
+        <div className="md:hidden">
           <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground rounded-full p-2 h-10 w-10"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-lg shadow-lg animate-fade-in">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={cn(
-                  "flex items-center px-4 py-3 rounded-lg font-medium",
-                  isActive(item.path)
-                    ? "bg-primary text-white"
-                    : "text-foreground hover:bg-primary/10"
-                )}
-                onClick={() => setIsOpen(false)}
-              >
-                <item.icon className="mr-3 h-5 w-5" />
-                {item.name}
-              </Link>
-            ))}
-
-            <div className="border-t border-gray-100 dark:border-gray-800 my-2 pt-2"></div>
-
-            <a
-              href="https://github.com/Jikhlin23"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-4 py-3 rounded-lg font-medium text-foreground hover:bg-primary/10"
+      {/* Mobile Bottom Navigation */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-t border-border shadow-lg">
+        <div className="flex justify-around items-center py-2 px-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={cn(
+                "flex flex-col items-center p-2 rounded-lg transition-all duration-200 min-w-0 flex-1",
+                isActive(item.path)
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-primary"
+              )}
             >
-              <Github className="mr-3 h-5 w-5" />
-              GitHub
-            </a>
-
-            <Button className="bg-gradient-to-r from-primary to-accent text-white mt-2">
-              Resume
-            </Button>
-          </div>
+              <item.icon className="h-5 w-5 mb-1" />
+              <span className="text-xs font-medium truncate">{item.name}</span>
+            </Link>
+          ))}
+          <a
+            href="https://github.com/Jikhlin23"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-2 rounded-lg transition-all duration-200 text-muted-foreground hover:text-primary min-w-0 flex-1"
+          >
+            <Github className="h-5 w-5 mb-1" />
+            <span className="text-xs font-medium truncate">GitHub</span>
+          </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
