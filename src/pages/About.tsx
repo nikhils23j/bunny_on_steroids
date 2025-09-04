@@ -187,10 +187,10 @@ const About = () => {
               </p>
               <p className="text-lg text-navy-700 my-6">
                 Recently been the part of the prestigious{" "}
-                <b>Google Developer group</b> as a Campous Organiser, where I
-                get to organise events and workshops for the community. It's
-                been a great experience so far, and I'm excited to see what the
-                future holds.
+                <b>Google Developer group</b> as a Campus Organiser, where I get
+                to organise events and workshops for the community. It's been a
+                great experience so far, and I'm excited to see what the future
+                holds.
               </p>
               <p>
                 <Button

@@ -95,7 +95,7 @@ const Courses = () => {
                     "computerScience"
                   )}`}
                 >
-                  Computer Science
+                  CS
                 </TabsTrigger>
                 <TabsTrigger
                   value="electricalEngineering"
@@ -103,7 +103,7 @@ const Courses = () => {
                     "electrical"
                   )}`}
                 >
-                  Electrical Eng.
+                  EE
                 </TabsTrigger>
                 <TabsTrigger
                   value="mathematics"
@@ -111,7 +111,7 @@ const Courses = () => {
                     "mathematics"
                   )}`}
                 >
-                  Mathematics
+                  Maths
                 </TabsTrigger>
                 <TabsTrigger
                   value="machineLearning"
@@ -119,7 +119,7 @@ const Courses = () => {
                     "machineLearning"
                   )}`}
                 >
-                  Machine Learning
+                  ML
                 </TabsTrigger>
               </TabsList>
             </div>
