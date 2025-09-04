@@ -55,13 +55,13 @@ const Courses = () => {
       <Navigation />
 
       {/* Header */}
-      <section className="pt-24 pb-12 bg-navy-800 text-white">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in text-foreground">
               My Academic Courses
             </h1>
-            <p className="text-lg text-gray-200">
+            <p className="text-xl text-muted-foreground">
               A concise overview of my coursework at IIT Kanpur
             </p>
           </div>

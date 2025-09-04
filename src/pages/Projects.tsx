@@ -197,13 +197,13 @@ const Projects = () => {
       <Navigation />
 
       {/* Header */}
-      <section className="pt-32 pb-16 bg-navy-800 text-white">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-primary/10 to-accent/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in text-foreground">
               My Projects
             </h1>
-            <p className="text-xl text-gray-200 animate-fade-in">
+            <p className="text-xl text-muted-foreground animate-fade-in">
               A showcase of my technical projects, ranging from web applications
               to data science.
             </p>
