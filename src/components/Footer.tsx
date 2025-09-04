@@ -100,7 +100,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="hidden md:block">
             <h4 className="text-lg font-semibold mb-4 border-b border-white/20 pb-2">
               Navigation
             </h4>
