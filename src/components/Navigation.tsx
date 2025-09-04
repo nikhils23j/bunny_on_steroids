@@ -112,9 +112,17 @@ const Navigation = () => {
           </a>
         </div>
 
-        {/* Mobile Theme Toggle */}
-        <div className="md:hidden">
+        {/* Mobile Icons */}
+        <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
+          <a
+            href="https://github.com/Jikhlin23"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-full bg-foreground text-background hover:bg-accent transition-colors"
+          >
+            <Github className="h-5 w-5" />
+          </a>
         </div>
       </div>
 
@@ -136,15 +144,6 @@ const Navigation = () => {
               <span className="text-xs font-medium truncate">{item.name}</span>
             </Link>
           ))}
-          <a
-            href="https://github.com/Jikhlin23"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center p-2 rounded-lg transition-all duration-200 text-muted-foreground hover:text-primary min-w-0 flex-1"
-          >
-            <Github className="h-5 w-5 mb-1" />
-            <span className="text-xs font-medium truncate">GitHub</span>
-          </a>
         </div>
       </div>
     </nav>
