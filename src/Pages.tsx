@@ -62,6 +62,7 @@ export function AboutPage() {
         <p className="eyebrow mono">ABOUT / THE PERSON BEHIND THE WORK</p>
         <h1>Curious by nature.<br /><em>Careful by habit.</em></h1>
         <p className="page-intro-lede">I’m Nikhil Jain, an engineer who likes turning complicated problems into work that people can trust, use, and improve together.</p>
+        <a className="button button-primary about-gallery-link" href="#team">See team photos <ArrowRight size={18} /></a>
       </div>
     </section>
     <section className="about-story section-pad">
@@ -80,7 +81,7 @@ export function AboutPage() {
         </div>
       </div>
     </section>
-    <section className="about-moments section-pad">
+    <section className="about-moments section-pad" id="team">
       <div className="container">
         <div className="section-heading" data-reveal>
           <div><p className="eyebrow mono"><span className="section-number">02</span> / PEOPLE ALONG THE WAY</p><h2>Better work is <em>shared.</em></h2></div>

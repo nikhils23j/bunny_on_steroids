@@ -1599,6 +1599,7 @@ h1 em {
   max-width: 700px;
   margin: 0;
 }
+.about-gallery-link { margin-top: 29px; }
 .about-story { background: #eef1e9; color: #17221b; }
 .about-story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8vw; align-items: center; }
 .about-story-photo { position: relative; overflow: hidden; background: #d6e2d0; min-height: 620px; }
