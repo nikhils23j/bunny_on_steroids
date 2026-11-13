@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+.vercel
 hello
 hello.pub
 passkeygithub
