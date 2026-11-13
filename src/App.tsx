@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowRight,
@@ -13,18 +13,11 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { projects, type Category, type Project } from "./projects";
+import { projects, type Project } from "./projects";
 import { blogPosts } from "./blogs";
 import { AboutPage, BlogArticle, BlogsPage } from "./Pages";
 
 const profileUrl = "https://github.com/nikhils23j";
-const categories: Array<"All" | Category> = [
-  "All",
-  "Systems",
-  "Applied AI",
-  "Quant",
-  "Product",
-];
 
 function useReveal() {
   useEffect(() => {
@@ -53,6 +46,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   const destination = project.liveUrl ?? project.url;
   return (
     <article
+      id={`project-${project.id}`}
       className={`project-card project-card--${project.id}`}
       style={{ "--card-index": index } as React.CSSProperties}
     >
@@ -148,27 +142,27 @@ function GithubPreview() {
         </div>
       </div>
       <div className="github-recent">
-        <span className="mono recent-label">RECENT OPEN WORK</span>
-        <a
-          href="https://github.com/nikhils23j/traceguard-replayable-tool-agent"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          traceguard-replayable-tool-agent <ArrowUpRight size={17} />
-        </a>
-        <a
-          href="https://github.com/nikhils23j/fieldbridge-shadow-replay"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          fieldbridge-shadow-replay <ArrowUpRight size={17} />
-        </a>
+        <span className="mono recent-label">SELECTED REPOSITORIES</span>
         <a
           href="https://github.com/nikhils23j/market-data-replay"
           target="_blank"
           rel="noopener noreferrer"
         >
           market-data-replay <ArrowUpRight size={17} />
+        </a>
+        <a
+          href="https://github.com/nikhils23j/incidentops"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          incidentops <ArrowUpRight size={17} />
+        </a>
+        <a
+          href="https://github.com/nikhils23j/GPU-direct-TCP"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GPU-direct-TCP <ArrowUpRight size={17} />
         </a>
       </div>
       <a
@@ -184,87 +178,93 @@ function GithubPreview() {
 }
 
 const featuredIds = [
-  "traceguard",
-  "fieldbridge",
+  "sniff",
   "market-replay",
   "incidentops",
-  "sniff",
   "fleet-config",
 ];
 const featuredProjects = featuredIds.map(
   (id) => projects.find((item) => item.id === id)!,
 );
 
-const earlierWork = [
+const projectDomains = [
   {
-    title: "GPU Direct TCP",
-    label: "NETWORKING · 2026",
-    description:
-      "IIT Kanpur course research prototype for GPU-side TCP processing, with a userspace relay needed for the tested NVIDIA setup.",
-    url: "https://github.com/nikhils23j/GPU-direct-TCP",
+    id: "product",
+    title: "Products & operations",
+    summary: "People-facing products and tools for teams under pressure.",
+    projectIds: ["sniff", "incidentops"],
   },
   {
-    title: "Computer Networks Lab",
-    label: "SYSTEMS · 2025",
-    description:
-      "Multithreaded C++ TCP chat, iterative and recursive DNS resolution, and a raw-socket handshake client.",
-    url: "https://github.com/nikhils23j/CS425-ComputerNetworks",
+    id: "markets",
+    title: "Markets & quant",
+    summary: "Market data, matching engines and measured risk experiments.",
+    projectIds: ["market-replay", "exchangelab", "risklab"],
   },
   {
-    title: "Instrument Driver & I–V Acquisition",
-    label: "LAB SOFTWARE · 2025",
-    description:
-      "PyVISA and QCoDeS instrument drivers, nested sweeps and live PyQtGraph logging for the IIT Kanpur lab project.",
-    url: "https://github.com/nikhils23j/Driver-Synthesis-I-V-Data-Analysis-Spintronic-Instruments",
+    id: "systems",
+    title: "Systems & infrastructure",
+    summary: "Correctness, networking, scheduling and recovery at the systems layer.",
+    projectIds: ["fleet-config", "gpu-direct-tcp", "k8s-operator", "api-auth", "gpu-scheduler", "llm-serving"],
+  },
+];
+
+const minors = [
+  {
+    title: "Algorithms",
+    courses: ["Data Structures & Algorithms (DSA)", "Algorithms II", "Randomised Algorithms"],
   },
   {
-    title: "Hospital Database System",
-    label: "DATABASES · 2025",
-    description:
-      "A group course project: 3NF MySQL schema with 16 tables and 21 foreign keys for hospital workflows.",
-    url: "https://github.com/nikhils23j/CS315",
+    title: "Machine Learning & Applications",
+    courses: ["Introduction to Machine Learning", "Statistical Natural Language Processing"],
+  },
+  {
+    title: "Computer Systems",
+    courses: ["Computer Networks", "Database Management System", "Linux Kernel Programming"],
   },
 ];
 
 function ProjectGallery() {
-  const [filter, setFilter] = useState<"All" | Category>("All");
-  const filtered =
-    filter === "All"
-      ? projects
-      : projects.filter((project) => project.category === filter);
   return (
     <>
-      <div className="work-controls" aria-label="Filter projects by category">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={
-              filter === category ? "filter-button active" : "filter-button"
-            }
-            type="button"
-            onClick={() => setFilter(category)}
-            aria-pressed={filter === category}
-          >
-            {category}
-            <span>
-              {category === "All"
-                ? projects.length
-                : projects.filter((project) => project.category === category)
-                    .length}
-            </span>
-          </button>
+      <nav className="domain-nav" aria-label="Jump to project domain">
+        {projectDomains.map((domain, index) => (
+          <a href={`#domain-${domain.id}`} key={domain.id} className="domain-link">
+            <span className="mono">0{index + 1} / {domain.projectIds.length} PROJECTS</span>
+            <strong>{domain.title}</strong>
+            <ArrowDown size={20} aria-hidden="true" />
+          </a>
         ))}
-      </div>
-      <div className="project-grid" aria-live="polite">
-        {filtered.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
-        ))}
-      </div>
+      </nav>
+      {projectDomains.map((domain, domainIndex) => (
+        <section className="domain-section" id={`domain-${domain.id}`} key={domain.id}>
+          <div className="domain-heading">
+            <span className="mono">0{domainIndex + 1} / DOMAIN</span>
+            <h3>{domain.title}</h3>
+            <p>{domain.summary}</p>
+          </div>
+          <div className="project-grid">
+            {domain.projectIds.map((id, index) => {
+              const project = projects.find((item) => item.id === id)!;
+              return <ProjectCard key={id} project={project} index={index} />;
+            })}
+          </div>
+        </section>
+      ))}
     </>
   );
 }
 
 function ProjectsPageContent() {
+  const [certificateOpen, setCertificateOpen] = useState(false);
+  const certificateDialog = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = certificateDialog.current;
+    if (!dialog) return;
+    if (certificateOpen && !dialog.open) dialog.showModal();
+    if (!certificateOpen && dialog.open) dialog.close();
+  }, [certificateOpen]);
+
   return (
     <>
       <section className="projects-page-hero" id="top">
@@ -277,19 +277,18 @@ function ProjectsPageContent() {
             Built to be <em>examined.</em>
           </h1>
           <p>
-            Systems, applied AI, product work and quant experiments. Each card
-            points to code and evidence; the scope note tells you what the
-            number actually measures.
+            Products, market systems and infrastructure experiments. Each card
+            points to code and evidence; the scope note says what each result measures.
           </p>
           <div className="projects-page-stats mono">
             <span>
               <strong>{projects.length}</strong> RECENT PROJECTS
             </span>
             <span>
-              <strong>4</strong> FOCUS AREAS
+              <strong>3</strong> DOMAINS
             </span>
             <span>
-              <strong>4</strong> EARLIER FOUNDATIONS
+              <strong>3</strong> IITK MINORS
             </span>
           </div>
         </div>
@@ -306,46 +305,61 @@ function ProjectsPageContent() {
               </h2>
             </div>
             <p className="section-lede">
-              Browse by area, then open a repository for the implementation,
+              Pick a domain below, then open a project for implementation details,
               saved results and limitations.
             </p>
+          </div>
+          <div className="project-learning-note" data-reveal>
+            <div>
+              <span className="mono">WHAT I DID</span>
+              <p>I built and tested these projects across product, market and systems work. GPU Direct TCP was a group course research prototype; the repository describes the shared implementation and hardware setup.</p>
+            </div>
+            <div>
+              <span className="mono">WHAT I LEARNED</span>
+              <p>Good engineering needs clear scope: measure the real bottleneck, test failure paths, and state exactly where a result holds. The notes on each card make those boundaries visible.</p>
+            </div>
           </div>
           <ProjectGallery />
         </div>
       </section>
-      <section className="earlier-work section-pad">
+      <section className="minor-work section-pad">
         <div className="container">
           <div className="section-heading" data-reveal>
             <div>
               <p className="eyebrow mono">
-                <span className="section-number">02</span> / EARLIER FOUNDATIONS
+                <span className="section-number">02</span> / IIT KANPUR MINORS
               </p>
               <h2>
-                The work that <em>led here.</em>
+                The coursework <em>behind the work.</em>
               </h2>
             </div>
             <p className="section-lede">
-              Selected course and lab projects from the earlier portfolio,
-              updated with current links and factual scope.
+              Three undergraduate minors shaped how I approach algorithms,
+              learning systems and computer infrastructure.
             </p>
           </div>
-          <div className="earlier-list">
-            {earlierWork.map((item) => (
-              <a
-                key={item.title}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="earlier-item"
-              >
-                <span className="earlier-label mono">{item.label}</span>
-                <span className="earlier-text">
-                  <strong>{item.title}</strong>
-                  <small>{item.description}</small>
-                </span>
-                <ArrowUpRight size={22} aria-hidden="true" />
-              </a>
-            ))}
+          <div className="minors-layout">
+            <figure className="minors-certificate">
+              <button type="button" className="minors-certificate-open" onClick={() => setCertificateOpen(true)} aria-label="Expand IIT Kanpur minors certificate">
+                <img src="/portraits/minors-certificate.webp" alt="Preview of IIT Kanpur certificate awarding Nikhil Jain three minors" loading="lazy" decoding="async" />
+                <span className="mono">VIEW FULL SIZE <ArrowUpRight size={15} /></span>
+              </button>
+              <figcaption className="mono">IIT KANPUR / CERTIFICATE OF MINORS</figcaption>
+            </figure>
+            <div className="minors-list">
+              {minors.map((minor, index) => (
+                <article className="minor-card" key={minor.title}>
+                  <span className="mono">0{index + 1} / MINOR</span>
+                  <h3>{minor.title}</h3>
+                  <ul>{minor.courses.map((course) => <li key={course}>{course}</li>)}</ul>
+                  {minor.title === "Computer Systems" && (
+                    <a className="minor-project-link" href="#project-gpu-direct-tcp">
+                      Linux Kernel Programming course project: GPU Direct TCP <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -357,6 +371,10 @@ function ProjectsPageContent() {
           </a>
         </div>
       </section>
+      <dialog ref={certificateDialog} className="certificate-dialog" onClose={() => setCertificateOpen(false)} onClick={(event) => { if (event.target === event.currentTarget) setCertificateOpen(false); }} aria-label="IIT Kanpur minors certificate full size">
+        <button type="button" className="certificate-close" onClick={() => setCertificateOpen(false)} aria-label="Close certificate"><X size={22} /></button>
+        <img src="/portraits/minors-certificate.webp" alt="Full IIT Kanpur certificate for Nikhil Jain's minors in Algorithms, Machine Learning & Applications, and Computer Systems" />
+      </dialog>
     </>
   );
 }
@@ -623,8 +641,7 @@ function App() {
                 </div>
                 <div className="work-footer">
                   <p>
-                    A glimpse of the full catalog, from recent builds to earlier
-                    course work.
+                    Four selected projects. Explore the full collection by domain.
                   </p>
                   <a href="/projects">
                     Explore all projects <ArrowUpRight size={18} />
@@ -673,7 +690,7 @@ function App() {
                   </h2>
                   <p className="about-lead">
                     I’m an Electrical Engineering graduate from IIT Kanpur, with
-                    minors in Computer Systems, Machine Learning and Algorithms.
+                    minors in Computer Systems, Machine Learning & Applications, and Algorithms.
                   </p>
                   <p>
                     My work has taken me from analyzing wireless modem logs at
@@ -840,7 +857,7 @@ function App() {
                         B.Tech · Electrical Engineering
                       </p>
                       <p>
-                        Minors in Computer Systems, Machine Learning and
+                        Minors in Computer Systems, Machine Learning & Applications, and
                         Algorithms. Coursework and projects across systems,
                         networking, databases and statistical NLP.
                       </p>

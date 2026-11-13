@@ -17,36 +17,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "traceguard",
-    name: "TraceGuard",
-    category: "Applied AI",
-    year: "2026",
-    image: "/projects/traceguard.webp",
-    imageAlt:
-      "Chart comparing guarded and plain agent task outcomes in a synthetic evaluation",
-    description:
-      "A replayable local tool-use agent with a deterministic authority gate, approval flow and crash-safe ticket writes.",
-    metric: "144 / 144 guarded task outcomes",
-    scope: "Fixed synthetic suite · 3 seeds",
-    stack: ["Python", "LangGraph", "SQLite", "MLX"],
-    url: "https://github.com/nikhils23j/traceguard-replayable-tool-agent",
-  },
-  {
-    id: "fieldbridge",
-    name: "FieldBridge",
-    category: "Applied AI",
-    year: "2026",
-    image: "/projects/fieldbridge.webp",
-    imageAlt:
-      "Chart of retained and recovered events in the FieldBridge local HTTP demo",
-    description:
-      "A shadow-replay integration workflow that checks schema changes before an approved cutover.",
-    metric: "120,000 logical events evaluated",
-    scope: "Local, synthetic customer profiles",
-    stack: ["Python", "SQLite", "HTTP", "Replay"],
-    url: "https://github.com/nikhils23j/fieldbridge-shadow-replay",
-  },
-  {
     id: "market-replay",
     name: "Market Data Replay",
     category: "Quant",
@@ -177,18 +147,18 @@ export const projects: Project[] = [
     url: "https://github.com/nikhils23j/multi-tenant-gpu-placement-simulator",
   },
   {
-    id: "gpu-verification",
-    name: "GPU Pipeline Verification",
+    id: "gpu-direct-tcp",
+    name: "GPU Direct TCP",
     category: "Systems",
     year: "2026",
-    image: "/projects/gpu-verification.webp",
-    imageAlt: "Coverage chart for SystemVerilog and cocotb testbenches",
+    image: "/projects/gpu-direct-tcp.webp",
+    imageAlt: "Diagram of NIC DMA into GPU memory with a CPU control relay and GPU notify ring",
     description:
-      "A GPU-style ALU pipeline and verification suite with a reorder buffer and randomized backpressure.",
-    metric: "9 / 9 injected RTL bugs caught",
-    scope: "Simulation only · hand-written bugs",
-    stack: ["SystemVerilog", "cocotb", "Python"],
-    url: "https://github.com/nikhils23j/gpu-command-pipeline-ip-verification",
+      "A Linux Kernel Programming group course prototype for GPU-side TCP processing with NIC-to-GPU DMA and a CPU relay on the tested setup.",
+    metric: "1 GbE line-rate throughput",
+    scope: "Single hardware testbed · one TCP connection",
+    stack: ["CUDA", "C", "Networking"],
+    url: "https://github.com/nikhils23j/GPU-direct-TCP",
   },
   {
     id: "llm-serving",

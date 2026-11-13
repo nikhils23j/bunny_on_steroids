@@ -74,7 +74,7 @@ export function AboutPage() {
         <div className="about-story-copy" data-reveal>
           <p className="eyebrow mono"><span className="section-number">01</span> / THE SHORT VERSION</p>
           <h2>People, systems, <em>possibility.</em></h2>
-          <p>I graduated from IIT Kanpur in Electrical Engineering, with minors in Computer Systems, Machine Learning, and Algorithms. I’ve worked on wireless modem data at Samsung R&D and supported live trading infrastructure at Squarepoint Capital.</p>
+          <p>I graduated from IIT Kanpur in Electrical Engineering, with minors in Computer Systems, Machine Learning & Applications, and Algorithms. I’ve worked on wireless modem data at Samsung R&D and supported live trading infrastructure at Squarepoint Capital.</p>
           <p>Those settings taught me different versions of the same lesson: communicate clearly, check the state of the system, and make the next action understandable to everyone involved. At Squarepoint I helped coordinate incident bridges across more than eight trading teams and infrastructure owners, then checked recovery end to end.</p>
           <p>My own projects are how I keep exploring. They move between C++ market feeds, AI tool safety, integrations, and small products. I like publishing the method, result, and limitations together so someone else can inspect the work.</p>
           <a className="text-link" href="/projects">See the project archive <ArrowUpRight size={19} /></a>
