@@ -90,7 +90,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <span key={item}>{item}</span>
           ))}
         </div>
-        {project.liveUrl && <a className="project-source-link" href={project.url} target="_blank" rel="noopener noreferrer"><Github size={15} /> View source on GitHub <ArrowUpRight size={15} /></a>}
+        {project.liveUrl && (
+          <div className="project-links">
+            <a className="project-live-link" href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              Link to web-app <ArrowUpRight size={15} />
+            </a>
+            <a className="project-source-link" href={project.url} target="_blank" rel="noopener noreferrer">
+              <Github size={15} /> View source on GitHub <ArrowUpRight size={15} />
+            </a>
+          </div>
+        )}
       </div>
     </article>
   );
@@ -182,6 +191,7 @@ const featuredIds = [
   "market-replay",
   "incidentops",
   "fleet-config",
+  "gpu-direct-tcp",
 ];
 const featuredProjects = featuredIds.map(
   (id) => projects.find((item) => item.id === id)!,
@@ -465,12 +475,6 @@ function App() {
               Writing
             </a>
             <a
-              href={isInnerPage ? "/#approach" : "#approach"}
-              onClick={() => setMenuOpen(false)}
-            >
-              How I work
-            </a>
-            <a
               href={isInnerPage ? "/#github" : "#github"}
               onClick={() => setMenuOpen(false)}
             >
@@ -641,7 +645,7 @@ function App() {
                 </div>
                 <div className="work-footer">
                   <p>
-                    Four selected projects. Explore the full collection by domain.
+                    Five selected projects. Explore the full collection by domain.
                   </p>
                   <a href="/projects">
                     Explore all projects <ArrowUpRight size={18} />
@@ -728,67 +732,11 @@ function App() {
               </div>
             </section>
 
-            <section className="principles section-pad" id="approach">
-              <div className="container">
-                <div className="principles-heading" data-reveal>
-                  <p className="eyebrow mono">
-                    <span className="section-number">03</span> / HOW I WORK
-                  </p>
-                  <h2>
-                    Good work is a <em>team sport.</em>
-                  </h2>
-                  <p>
-                    These are the habits I try to bring to a problem, whether it
-                    is an incident bridge, a research question or a community
-                    event.
-                  </p>
-                </div>
-                <div className="principles-grid">
-                  <article className="principle-card" data-reveal>
-                    <span className="principle-index mono">01 / OWNERSHIP</span>
-                    <h3>Stay steady when things break.</h3>
-                    <p>
-                      At Squarepoint, I helped coordinate live incident bridges
-                      across 8+ trading teams and infrastructure owners, then
-                      validated recovery with end-to-end checks.
-                    </p>
-                    <span className="principle-proof mono">
-                      PRODUCTION INCIDENT RESPONSE
-                    </span>
-                  </article>
-                  <article className="principle-card" data-reveal>
-                    <span className="principle-index mono">02 / RIGOR</span>
-                    <h3>Show the evidence, including the edges.</h3>
-                    <p>
-                      I keep results, baselines and scope limits close to my
-                      projects. It makes it easier to tell what worked, what did
-                      not and what needs another test.
-                    </p>
-                    <span className="principle-proof mono">
-                      REPRODUCIBLE PROJECT RESULTS
-                    </span>
-                  </article>
-                  <article className="principle-card" data-reveal>
-                    <span className="principle-index mono">03 / COMMUNITY</span>
-                    <h3>Make space for other people to build.</h3>
-                    <p>
-                      I served as a Google Developer Groups campus organiser and
-                      led 18 secretaries as an IIT Kanpur Academic and Career
-                      Council research wing manager.
-                    </p>
-                    <span className="principle-proof mono">
-                      CAMPUS LEADERSHIP
-                    </span>
-                  </article>
-                </div>
-              </div>
-            </section>
-
             <section className="experience section-pad" id="experience">
               <div className="container experience-layout">
                 <div className="experience-heading" data-reveal>
                   <p className="eyebrow mono">
-                    <span className="section-number">04</span> / EXPERIENCE
+                    <span className="section-number">03</span> / EXPERIENCE
                   </p>
                   <h2>
                     Where I’ve
@@ -876,7 +824,7 @@ function App() {
               <div className="container github-layout">
                 <div className="github-copy" data-reveal>
                   <p className="eyebrow mono">
-                    <span className="section-number">05</span> / OPEN SOURCE
+                    <span className="section-number">04</span> / OPEN SOURCE
                   </p>
                   <h2>
                     Take a look
@@ -905,7 +853,7 @@ function App() {
             <section className="contact section-pad" id="contact">
               <div className="container contact-inner" data-reveal>
                 <p className="eyebrow mono">
-                  <span className="section-number">06</span> / SAY HELLO
+                  <span className="section-number">05</span> / SAY HELLO
                 </p>
                 <h2>
                   Have a good
