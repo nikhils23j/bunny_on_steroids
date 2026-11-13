@@ -1,6 +1,6 @@
 # Nikhil Jain — portfolio
 
-A responsive portfolio for [Nikhil Jain](https://github.com/nikhils23j), built with React, TypeScript and Vite. The homepage offers a project glimpse and a GitHub preview; `/projects` has the full catalog, `/about` adds personal and work context, and `/blogs` holds technical writing.
+A responsive portfolio for [Nikhil Jain](https://github.com/nikhils23j), built with React, TypeScript and Vite. The homepage offers a project glimpse, and its navigation links directly to GitHub; `/projects` has the full catalog, `/about` adds personal and work context, and `/blogs` holds technical writing.
 
 ## Local development
 
@@ -10,7 +10,7 @@ npm run dev
 npm run build
 ```
 
-The site uses transform and opacity transitions for entrance and hover motion, and respects `prefers-reduced-motion`. The three project domain links jump to their sections. The GitHub card reads the public GitHub Users API for the current repository count; the rest of the card remains useful if the API is unavailable.
+The site uses transform and opacity transitions for entrance and hover motion, and respects `prefers-reduced-motion`. The three project domain links jump to their sections.
 
 ## Add a blog post
 

@@ -279,8 +279,7 @@ h1 em {
     monospace;
   letter-spacing: 0.11em;
 }
-.status-light,
-.live-dot {
+.status-light {
   width: 6px;
   height: 6px;
   background: var(--acid);
@@ -880,146 +879,6 @@ h1 em {
   background: #263a2d;
   padding: 7px 9px;
 }
-.github-section {
-  background: #eef1e9;
-  color: #17221b;
-}
-.github-copy .eyebrow { color: #66786c; }
-.github-copy .section-number { color: #46670e; }
-.github-copy h2 em { color: #748e36; }
-.github-layout {
-  display: grid;
-  grid-template-columns: 0.88fr 1.12fr;
-  gap: 8vw;
-  align-items: center;
-}
-.github-copy h2 {
-  font-size: clamp(48px, 5.6vw, 82px);
-}
-.github-copy > p:not(.eyebrow) {
-  font-size: 15px;
-  color: #546359;
-  line-height: 1.8;
-  max-width: 520px;
-  margin: 27px 0 30px;
-}
-.github-preview {
-  background: #1a2525;
-  color: #eef5e8;
-  border: 1px solid #3c5144;
-  box-shadow: 24px 24px 0 rgba(212, 247, 117, 0.055);
-}
-.github-preview-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 28px;
-  border-bottom: 1px solid #33463e;
-}
-.github-logo {
-  display: grid;
-  place-items: center;
-  width: 47px;
-  height: 47px;
-  background: #27372e;
-  color: var(--acid);
-}
-.github-live {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font:
-    10px "DM Mono",
-    monospace;
-  letter-spacing: 0.1em;
-  color: #9fb49c;
-}
-.github-preview-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 15px;
-  padding: 33px 28px 30px;
-}
-.github-preview-main h3 {
-  font-size: 37px;
-  letter-spacing: -0.06em;
-  margin: 9px 0 8px;
-}
-.github-preview-main p:not(.eyebrow) {
-  font-size: 13px;
-  line-height: 1.6;
-  color: #9eb0a2;
-  max-width: 300px;
-  margin: 0;
-}
-.github-preview-main .eyebrow {
-  font-size: 10px;
-  color: #9fb49c;
-  margin: 0;
-}
-.repo-count {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-.repo-count strong {
-  font:
-    600 55px/0.9 "Space Grotesk",
-    sans-serif;
-  color: var(--acid);
-  min-width: 2ch;
-  text-align: right;
-}
-.repo-count span {
-  font:
-    10px/1.5 "DM Mono",
-    monospace;
-  color: #94a996;
-}
-.github-recent {
-  border-top: 1px solid #33463e;
-  margin: 0 28px;
-  padding: 23px 0;
-}
-.recent-label {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: #879f8c;
-  margin-bottom: 13px;
-}
-.github-recent a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  border-top: 1px solid #334139;
-  padding: 12px 0;
-  font:
-    12px "DM Mono",
-    monospace;
-  color: #c9d9c8;
-  transition: color 0.2s;
-}
-.github-recent a:hover {
-  color: var(--acid);
-}
-.github-full-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 19px 28px;
-  background: var(--acid);
-  color: #142016;
-  font-weight: 700;
-  font-size: 13px;
-  transition: background 0.2s;
-}
-.github-full-link:hover {
-  background: #e5ffa0;
-}
 .contact {
   background: var(--acid);
   color: #162119;
@@ -1140,8 +999,7 @@ h1 em {
   .intro-chips {
     max-width: 300px;
   }
-  .about-grid,
-  .github-layout {
+  .about-grid {
     gap: 6vw;
   }
   .experience-layout {
@@ -1204,13 +1062,6 @@ h1 em {
   }
   .experience-heading > p:last-child {
     max-width: 560px;
-  }
-  .github-layout {
-    grid-template-columns: 1fr;
-    gap: 42px;
-  }
-  .github-preview {
-    max-width: 650px;
   }
   .project-visual {
     height: 210px;
@@ -1386,30 +1237,6 @@ h1 em {
   }
   .experience-year {
     padding: 0;
-  }
-  .github-copy h2 {
-    font-size: clamp(49px, 12vw, 70px);
-  }
-  .github-preview-main {
-    padding: 25px 20px;
-  }
-  .github-preview-head {
-    padding: 20px;
-  }
-  .github-preview-main h3 {
-    font-size: 29px;
-  }
-  .repo-count strong {
-    font-size: 44px;
-  }
-  .github-recent {
-    margin-inline: 20px;
-  }
-  .github-recent a {
-    font-size: 10px;
-  }
-  .github-full-link {
-    padding-inline: 20px;
   }
   .contact h2 {
     font-size: clamp(56px, 12vw, 78px);
@@ -1910,35 +1737,6 @@ h1 em {
 .minor-card li { background: #eef3e8; border: 1px solid #b9cbb4; padding: 9px 11px; color: #4c604d; font-size: 12px; line-height: 1.35; }
 .minor-project-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; color: #405b2e; font-size: 12px; font-weight: 700; border-bottom: 1px solid #688a49; padding-bottom: 5px; }
 .minor-project-link:hover { color: #172c1b; }
-.projects-page-outro {
-  background: var(--acid);
-  color: #142015;
-}
-.projects-page-outro-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding-top: 35px;
-  padding-bottom: 35px;
-}
-.projects-page-outro p {
-  font:
-    600 26px "Space Grotesk",
-    sans-serif;
-  letter-spacing: -0.04em;
-  margin: 0;
-}
-.projects-page-outro a {
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 13px;
-  font-weight: 700;
-  border-bottom: 1px solid #172318;
-  padding-bottom: 8px;
-}
-
 @media (max-width: 1100px) {
   .home-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-project-grid > .project-card:first-child { grid-column: span 2; grid-row: auto; }
@@ -1998,10 +1796,4 @@ h1 em {
   .minors-layout { margin-top: 35px; }
   .minors-certificate { max-width: 270px; }
   .minors-certificate-open img { height: 350px; }
-  .projects-page-outro-inner {
-    display: block;
-  }
-  .projects-page-outro a {
-    margin-top: 15px;
-  }
 }

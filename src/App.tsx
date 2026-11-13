@@ -105,87 +105,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-type GithubData = { public_repos: number; html_url: string; login: string };
-
-function GithubPreview() {
-  const [github, setGithub] = useState<GithubData | null>(null);
-  useEffect(() => {
-    const controller = new AbortController();
-    fetch("https://api.github.com/users/nikhils23j", {
-      signal: controller.signal,
-    })
-      .then((response) =>
-        response.ok
-          ? (response.json() as Promise<GithubData>)
-          : Promise.reject(),
-      )
-      .then((data) => setGithub(data))
-      .catch(() => {});
-    return () => controller.abort();
-  }, []);
-  return (
-    <div className="github-preview" data-reveal>
-      <div className="github-preview-head">
-        <span className="github-logo">
-          <Github size={28} strokeWidth={1.75} />
-        </span>
-        <span className="github-live">
-          <span className="live-dot" /> PUBLIC PROFILE
-        </span>
-      </div>
-      <div className="github-preview-main">
-        <div>
-          <p className="mono eyebrow">GITHUB / NIKHILS23J</p>
-          <h3>
-            Nikhil Jain<span className="accent-dot">.</span>
-          </h3>
-          <p>Code, experiments, and measured results—open for a closer look.</p>
-        </div>
-        <div className="repo-count">
-          <strong>{github?.public_repos ?? "—"}</strong>
-          <span>
-            public
-            <br />
-            repositories
-          </span>
-        </div>
-      </div>
-      <div className="github-recent">
-        <span className="mono recent-label">SELECTED REPOSITORIES</span>
-        <a
-          href="https://github.com/nikhils23j/market-data-replay"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          market-data-replay <ArrowUpRight size={17} />
-        </a>
-        <a
-          href="https://github.com/nikhils23j/incidentops"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          incidentops <ArrowUpRight size={17} />
-        </a>
-        <a
-          href="https://github.com/nikhils23j/GPU-direct-TCP"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GPU-direct-TCP <ArrowUpRight size={17} />
-        </a>
-      </div>
-      <a
-        className="github-full-link"
-        href={profileUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Explore the full profile <ArrowUpRight size={18} />
-      </a>
-    </div>
-  );
-}
-
 const featuredIds = [
   "sniff",
   "market-replay",
@@ -373,14 +292,6 @@ function ProjectsPageContent() {
           </div>
         </div>
       </section>
-      <section className="projects-page-outro">
-        <div className="container projects-page-outro-inner">
-          <p>Want the full repository list?</p>
-          <a href={profileUrl} target="_blank" rel="noopener noreferrer">
-            See everything on GitHub <ArrowUpRight size={18} />
-          </a>
-        </div>
-      </section>
       <dialog ref={certificateDialog} className="certificate-dialog" onClose={() => setCertificateOpen(false)} onClick={(event) => { if (event.target === event.currentTarget) setCertificateOpen(false); }} aria-label="IIT Kanpur minors certificate full size">
         <button type="button" className="certificate-close" onClick={() => setCertificateOpen(false)} aria-label="Close certificate"><X size={22} /></button>
         <img src="/portraits/minors-certificate.webp" alt="Full IIT Kanpur certificate for Nikhil Jain's minors in Algorithms, Machine Learning & Applications, and Computer Systems" />
@@ -475,7 +386,9 @@ function App() {
               Writing
             </a>
             <a
-              href={isInnerPage ? "/#github" : "#github"}
+              href={profileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
             >
               GitHub
@@ -537,14 +450,6 @@ function App() {
                     </a>
                   </div>
                   <div className="hero-socials">
-                    <a
-                      href={profileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="GitHub"
-                    >
-                      <Github size={20} />
-                    </a>
                     <a
                       href="https://www.linkedin.com/in/nikhil-jain-907100253"
                       target="_blank"
@@ -820,40 +725,10 @@ function App() {
               </div>
             </section>
 
-            <section className="github-section section-pad" id="github">
-              <div className="container github-layout">
-                <div className="github-copy" data-reveal>
-                  <p className="eyebrow mono">
-                    <span className="section-number">04</span> / OPEN SOURCE
-                  </p>
-                  <h2>
-                    Take a look
-                    <br />
-                    <em>under the hood.</em>
-                  </h2>
-                  <p>
-                    Ideas are more useful when the implementation and evidence
-                    are easy to inspect. My GitHub has project code,
-                    reproducible results and notes on what each experiment
-                    can—and can’t—claim.
-                  </p>
-                  <a
-                    className="button button-primary"
-                    href={profileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Visit my GitHub <Github size={19} />
-                  </a>
-                </div>
-                <GithubPreview />
-              </div>
-            </section>
-
             <section className="contact section-pad" id="contact">
               <div className="container contact-inner" data-reveal>
                 <p className="eyebrow mono">
-                  <span className="section-number">05</span> / SAY HELLO
+                  <span className="section-number">04</span> / SAY HELLO
                 </p>
                 <h2>
                   Have a good
@@ -871,13 +746,6 @@ function App() {
                   nikhilj22.iitk@gmail.com <ArrowUpRight size={34} />
                 </a>
                 <div className="contact-links">
-                  <a
-                    href={profileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={20} /> GitHub <ArrowUpRight size={16} />
-                  </a>
                   <a
                     href="https://www.linkedin.com/in/nikhil-jain-907100253"
                     target="_blank"
