@@ -14,6 +14,8 @@ import {
   X,
 } from "lucide-react";
 import { projects, type Category, type Project } from "./projects";
+import { blogPosts } from "./blogs";
+import { AboutPage, BlogArticle, BlogsPage } from "./Pages";
 
 const profileUrl = "https://github.com/nikhils23j";
 const categories: Array<"All" | Category> = [
@@ -48,6 +50,7 @@ function useReveal() {
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const destination = project.liveUrl ?? project.url;
   return (
     <article
       className={`project-card project-card--${project.id}`}
@@ -55,10 +58,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <a
         className="project-visual"
-        href={project.url}
+        href={destination}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`View ${project.name} on GitHub`}
+        aria-label={project.liveUrl ? `Visit ${project.name} website` : `View ${project.name} on GitHub`}
       >
         <div className="visual-grain" aria-hidden="true" />
         <img
@@ -67,6 +70,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           loading="lazy"
           decoding="async"
         />
+        {project.id === "sniff" && <span className="project-brand" aria-label="Sniff.in logo"><img src="/projects/sniff.webp" alt="" /></span>}
         <span className="visual-arrow">
           <ArrowUpRight size={20} strokeWidth={1.8} />
         </span>
@@ -77,7 +81,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <span>{project.year}</span>
         </div>
         <h3>
-          <a href={project.url} target="_blank" rel="noopener noreferrer">
+          <a href={destination} target="_blank" rel="noopener noreferrer">
             {project.name}
             <ArrowUpRight size={19} aria-hidden="true" />
           </a>
@@ -92,6 +96,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <span key={item}>{item}</span>
           ))}
         </div>
+        {project.liveUrl && <a className="project-source-link" href={project.url} target="_blank" rel="noopener noreferrer"><Github size={15} /> View source on GitHub <ArrowUpRight size={15} /></a>}
       </div>
     </article>
   );
@@ -358,11 +363,17 @@ function ProjectsPageContent() {
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const isProjectsPage = window.location.pathname === "/projects";
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isProjectsPage = pathname === "/projects";
+  const isAboutPage = pathname === "/about";
+  const isBlogsPage = pathname === "/blogs";
+  const article = pathname.startsWith("/blogs/")
+    ? blogPosts.find((post) => `/blogs/${post.slug}` === pathname)
+    : undefined;
+  const isInnerPage = pathname !== "/";
   useReveal();
   useEffect(() => {
     const legacySections: Record<string, string> = {
-      "/about": "about",
       "/courses": "about",
       "/story": "about",
     };
@@ -376,18 +387,22 @@ function App() {
     });
   }, []);
   useEffect(() => {
-    if (!isProjectsPage) return;
-    document.title = "Projects — Nikhil Jain";
+    const title = article?.title ?? (isProjectsPage ? "Projects" : isAboutPage ? "About" : isBlogsPage ? "Writing" : "");
+    if (!title) return;
+    document.title = `${title} — Nikhil Jain`;
     document
       .querySelector('link[rel="canonical"]')
-      ?.setAttribute("href", "https://nikhilj22.vercel.app/projects");
+      ?.setAttribute("href", `https://nikhilj22iitk.vercel.app${pathname}`);
+    document.querySelector('meta[property="og:url"]')?.setAttribute("content", `https://nikhilj22iitk.vercel.app${pathname}`);
+    document.querySelector('meta[property="og:title"]')?.setAttribute("content", `${title} — Nikhil Jain`);
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute(
         "content",
-        "Explore Nikhil Jain’s projects across systems, applied AI, product engineering and quantitative research.",
+        article?.subtitle ?? (isProjectsPage ? "Explore Nikhil Jain’s projects across systems, applied AI, product engineering and quantitative research." : isAboutPage ? "Meet Nikhil Jain: engineering work, values, team experiences, art, music, and chess." : "Technical notes from Nikhil Jain’s projects: decisions, evidence, lessons, and open questions."),
       );
-  }, [isProjectsPage]);
+    document.querySelector('meta[property="og:description"]')?.setAttribute("content", article?.subtitle ?? (isProjectsPage ? "Explore Nikhil Jain’s project archive, with code, results and limitations." : isAboutPage ? "Meet Nikhil Jain: engineer, teammate, artist, musician and chess player." : "Technical notes on what Nikhil Jain has built and is learning next."));
+  }, [article, isProjectsPage, isAboutPage, isBlogsPage, pathname]);
 
   return (
     <>
@@ -398,7 +413,7 @@ function App() {
         <div className="nav-shell container">
           <a
             className="wordmark"
-            href={isProjectsPage ? "/" : "#top"}
+            href={isInnerPage ? "/" : "#top"}
             aria-label="Nikhil Jain, back to top"
           >
             <span className="wordmark-icon">
@@ -418,25 +433,27 @@ function App() {
               Projects
             </a>
             <a
-              href={isProjectsPage ? "/#about" : "#about"}
+              href="/about"
+              aria-current={isAboutPage ? "page" : undefined}
               onClick={() => setMenuOpen(false)}
             >
               About
             </a>
             <a
-              href={isProjectsPage ? "/#approach" : "#approach"}
+              href="/blogs"
+              aria-current={isBlogsPage || article ? "page" : undefined}
+              onClick={() => setMenuOpen(false)}
+            >
+              Writing
+            </a>
+            <a
+              href={isInnerPage ? "/#approach" : "#approach"}
               onClick={() => setMenuOpen(false)}
             >
               How I work
             </a>
             <a
-              href={isProjectsPage ? "/#experience" : "#experience"}
-              onClick={() => setMenuOpen(false)}
-            >
-              Experience
-            </a>
-            <a
-              href={isProjectsPage ? "/#github" : "#github"}
+              href={isInnerPage ? "/#github" : "#github"}
               onClick={() => setMenuOpen(false)}
             >
               GitHub
@@ -458,9 +475,7 @@ function App() {
       </header>
 
       <main id="main">
-        {isProjectsPage ? (
-          <ProjectsPageContent />
-        ) : (
+        {isProjectsPage ? <ProjectsPageContent /> : isAboutPage ? <AboutPage /> : isBlogsPage ? <BlogsPage /> : article ? <BlogArticle post={article} /> : (
           <>
             <section className="hero" id="top">
               <div className="hero-grid" aria-hidden="true" />
@@ -688,11 +703,9 @@ function App() {
                   </div>
                   <a
                     className="text-link"
-                    href="/Nikhil_Jain_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/about"
                   >
-                    The full résumé <ArrowUpRight size={19} />
+                    More about me <ArrowUpRight size={19} />
                   </a>
                 </div>
               </div>
@@ -927,7 +940,7 @@ function App() {
             NJ<span>.</span>
           </span>
           <p>© {new Date().getFullYear()} Nikhil Jain</p>
-          <a href={isProjectsPage ? "/projects#top" : "#top"}>
+          <a href={isInnerPage ? `${pathname}#top` : "#top"}>
             Back to top <ArrowRight size={17} className="back-top-arrow" />
           </a>
         </div>

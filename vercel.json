@@ -2,6 +2,8 @@
   "rewrites": [
     { "source": "/about", "destination": "/index.html" },
     { "source": "/projects", "destination": "/index.html" },
+    { "source": "/blogs", "destination": "/index.html" },
+    { "source": "/blogs/:slug", "destination": "/index.html" },
     { "source": "/courses", "destination": "/index.html" },
     { "source": "/story", "destination": "/index.html" }
   ]

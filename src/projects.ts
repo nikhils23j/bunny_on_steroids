@@ -12,6 +12,7 @@ export type Project = {
   scope: string;
   stack: string[];
   url: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -78,14 +79,15 @@ export const projects: Project[] = [
     name: "Sniff.in",
     category: "Product",
     year: "2026",
-    image: "/projects/sniff.webp",
-    imageAlt: "Sniff.in app icon on a simple project visual",
+    image: "/projects/sniff-scene.webp",
+    imageAlt: "Festive illustration of three friends standing together",
     description:
       "A mutual-consent social discovery app for campuses, offices and events, with a deployed backend and mobile test builds.",
     metric: "125+ automated checks",
     scope: "Database, unit and live-backend tests",
     stack: ["React Native", "TypeScript", "Supabase"],
     url: "https://github.com/nikhils23j/sniff.in",
+    liveUrl: "https://sniffinreal.vercel.app",
   },
   {
     id: "fleet-config",
