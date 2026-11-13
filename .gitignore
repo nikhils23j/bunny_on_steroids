@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+hello
+hello.pub
+passkeygithub
+passkeygithub.pub
 
 # Editor directories and files
 .vscode/*
