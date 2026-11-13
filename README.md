@@ -16,6 +16,10 @@ The site uses transform and opacity transitions for entrance and hover motion, a
 
 Add one entry to `src/blogs.ts` with a unique `slug`, title, summary, image and `blocks`. The blog index and article route render from that data automatically. Add its URL to `public/sitemap.xml` before deploying. Keep claims linked to the repository and label local or synthetic measurements clearly.
 
+## Publish updates
+
+The live Vercel project is `nikhilj22iitk` in the `sniffin` scope. From this repository, publish a production build with `npx vercel@latest deploy --prod --yes --scope sniffin`. The project does not have GitHub auto-deployment yet: Vercel requires a GitHub login connection on the account before `vercel git connect` can link this repository.
+
 ## Content and visual sources
 
 - Experience, education, contact details and Sniff.in claims were checked against Nikhil's master résumé and evidence library on 13 November 2026. The résumé download is the one-page SDE variant from that library.
